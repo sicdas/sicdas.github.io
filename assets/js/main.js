@@ -1,95 +1,157 @@
-(function($) {
-  
-  "use strict";  
-
-  $(window).on('load', function() {
-
-  /*Page Loader active
-    ========================================================*/
-    $('#preloader').fadeOut();
-
-  // Sticky Nav
-    $(window).on('scroll', function() {
-        if ($(window).scrollTop() > 200) {
-            $('.scrolling-navbar').addClass('top-nav-collapse');
-        } else {
-            $('.scrolling-navbar').removeClass('top-nav-collapse');
+$(function() {
+    
+    "use strict";
+    
+    //===== Prealoder
+    
+    $(window).on('load', function(event) {
+        $('.preloader').delay(500).fadeOut(500);
+    });
+    
+    
+    //===== Sticky
+    
+    $(window).on('scroll', function(event) {    
+        var scroll = $(window).scrollTop();
+        if (scroll < 10) {
+            $(".navbar-area").removeClass("sticky");
+        } else{
+            $(".navbar-area").addClass("sticky");
         }
     });
-
-    /* ==========================================================================
-       countdown timer
-       ========================================================================== */
-     jQuery('#clock').countdown('2024/12/27',function(event){
-      var $this=jQuery(this).html(event.strftime(''
-      +'<div class="time-entry days"><span>%-D</span> <b>:</b> Days</div> '
-      +'<div class="time-entry hours"><span>%H</span> <b>:</b> Hours</div> '
-      +'<div class="time-entry minutes"><span>%M</span> <b>:</b> Minutes</div> '
-      +'<div class="time-entry seconds"><span>%S</span> Seconds</div> '));
+    
+    
+    //===== close navbar-collapse when a  clicked
+    
+    $(".navbar-nav a").on('click', function () {
+        $(".navbar-collapse").removeClass("show");
     });
+    
+    
+    //===== Section Menu Active
 
-    /* Auto Close Responsive Navbar on Click
-    ========================================================*/
-    function close_toggle() {
-        if ($(window).width() <= 768) {
-            $('.navbar-collapse a').on('click', function () {
-                $('.navbar-collapse').collapse('hide');
-            });
-        }
-        else {
-            $('.navbar .navbar-inverse a').off('click');
-        }
-    }
-    close_toggle();
-    $(window).resize(close_toggle);
+    var scrollLink = $('.page-scroll');
+        // Active link switching
+        $(window).scroll(function() {
+        var scrollbarLocation = $(this).scrollTop();
 
-      /* WOW Scroll Spy
-    ========================================================*/
-     var wow = new WOW({
-      //disabled for mobile
-        mobile: false
+        scrollLink.each(function() {
+
+          var sectionOffset = $(this.hash).offset().top - 73;
+
+          if ( sectionOffset <= scrollbarLocation ) {
+            $(this).parent().addClass('active');
+            $(this).parent().siblings().removeClass('active');
+          }
+        });
     });
-    wow.init();
-
-    /* Nivo Lightbox 
-    ========================================================*/
-    $('.lightbox').nivoLightbox({
-        effect: 'fadeScale',
-        keyboardNav: true,
-      });
-
-    // one page navigation 
-    $('.navbar-nav').onePageNav({
-            currentClass: 'active'
-    }); 
-
-    /* Counter
-    ========================================================*/
-    $('.counterUp').counterUp({
-     delay: 10,
-     time: 1500
+    
+    
+    //===== Mobile Menu
+    
+    $(".navbar-toggler").on('click', function(){
+        $(this).toggleClass("active");
     });
-
-    /* Back Top Link active
-    ========================================================*/
-      var offset = 200;
-      var duration = 500;
-      $(window).scroll(function() {
-        if ($(this).scrollTop() > offset) {
-          $('.back-to-top').fadeIn(400);
-        } else {
-          $('.back-to-top').fadeOut(400);
+    
+    $(".navbar-nav a").on('click', function() {
+        $(".navbar-toggler").removeClass('active');
+    });
+    
+    
+    //===== Countdown
+    
+    $('[data-countdown]').each(function() {
+        var $this = $(this), finalDate = $(this).data('countdown');
+            $this.countdown(finalDate, function(event) {
+            $this.html(event.strftime('<div class="header-countdown pt-70 d-flex justify-content-center"><div class="single-count-content count-color-1"><span class="count">%D</span><p class="text">Days</p></div><div class="single-count-content count-color-2"><span class="count">%H</span><p class="text">Hours</p></div><div class="single-count-content count-color-3"><span class="count">%M</span><p class="text">Minutes</p></div><div class="single-count-content count-color-4"><span class="count">%S</span><p class="text">Seconds</p></div></div>'));
+        });
+    });
+    
+    
+    //===== WOW
+    
+    new WOW().init();
+    
+    
+    
+    //===== Counter Up
+    
+    $('.counter').counterUp({
+        delay: 10,
+        time: 2000
+    });
+    
+    
+    $('.client-active').slick({
+        dots: false,
+        arrows: false,
+        infinite: true,
+        autoplay: true,
+        speed: 800,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        responsive: [
+            {
+              breakpoint: 1200,
+              settings: {
+                slidesToShow: 3,
+              }
+            },
+            {
+              breakpoint: 992,
+              settings: {
+                slidesToShow: 2,
+              }
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 2,
+              }
+            },
+            {
+              breakpoint: 576,
+              settings: {
+                slidesToShow: 1,
+              }
+            }
+        ]
+        });
+    
+    
+    //===== Back to top
+    
+    // Show or hide the sticky footer button
+    $(window).on('scroll', function(event) {
+        if($(this).scrollTop() > 600){
+            $('.back-to-top').fadeIn(200)
+        } else{
+            $('.back-to-top').fadeOut(200)
         }
-      });
-
-      $('.back-to-top').on('click',function(event) {
+    });
+    
+    
+    //Animate the scroll to yop
+    $('.back-to-top').on('click', function(event) {
         event.preventDefault();
+        
         $('html, body').animate({
-          scrollTop: 0
-        }, 600);
-        return false;
-      });
+            scrollTop: 0,
+        }, 1500);
+    });
+    
+    
+    //===== 
 
-  });      
-
-}(jQuery));
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+});
