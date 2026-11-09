@@ -1,0 +1,18 @@
+# Configuración general del sitio SICDAS (Jekyll / GitHub Pages).
+# El contenido del evento se edita en los archivos de la carpeta _data/.
+title: SICDAS
+description: >-
+  Seminario Internacional de Ciencia de Datos Aplicada a la Sociedad.
+  Organizan el Grupo de Investigación ITDATA y la FISI de la UNMSM.
+url: https://www.sicdas.org
+baseurl: ""
+lang: es-PE
+timezone: America/Lima
+
+# past-events/ guarda los sitios de ediciones anteriores tal como fueron publicados.
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle

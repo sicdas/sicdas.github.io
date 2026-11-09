@@ -1,0 +1,31 @@
+{%- assign org = site.data.organizadores -%}
+{%- assign ct = site.data.contacto -%}
+{%- assign ev = site.data.evento -%}
+<!-- ORGANIZAN (datos en _data/organizadores.yml) -->
+<section id="organizan" style="padding:10px 16px 100px;display:flex;flex-direction:column;align-items:center;gap:40px;text-align:center">
+<div style="display:flex;flex-direction:column;align-items:center;gap:14px">
+<span class="t-eyebrow">04 / Organización</span>
+<h2 class="t-h2">{% if org.auspiciadores.size > 0 %}Organizan y <em>auspician.</em>{% else %}<em>Organizan.</em>{% endif %}</h2>
+<span aria-hidden="true" style="width:150px;height:3px;background:#A6D92A;margin-top:4px"></span>
+<p class="t-body" style="max-width:640px;color:#4A5B70">{{ org.descripcion }}</p>
+</div>
+<div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:60px">
+{%- for o in org.organizan %}
+<a href="{{ o.url }}" target="_blank" rel="noopener"><img src="{{ o.logo | relative_url }}" alt="{{ o.nombre | escape }}" style="height:110px;max-width:320px;object-fit:contain"></a>
+{%- endfor %}
+</div>
+<span class="t-label" style="color:#4A5B70">{{ org.pie }}</span>
+{%- if org.auspiciadores.size > 0 %}
+<div style="display:flex;flex-direction:column;align-items:center;gap:18px">
+<span class="t-label" style="color:#4A5B70">Auspician</span>
+<div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:60px">
+{%- for o in org.auspiciadores %}
+<a href="{{ o.url }}" target="_blank" rel="noopener"><img src="{{ o.logo | relative_url }}" alt="{{ o.nombre | escape }}" style="height:110px;max-width:320px;object-fit:contain"></a>
+{%- endfor %}
+</div>
+</div>
+{%- endif %}
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:20px">
+<a href="mailto:{{ ct.correo }}?subject={{ ev.edicion | append: ' ' | append: ev.sigla | append: ' ' | append: ev.anio | uri_escape }}" class="ghost-dark t-btn" style="display:inline-flex;align-items:center;height:50px;padding:0 28px;border:2px solid #0C1633;color:#0C1633;text-decoration:none">ESCRÍBENOS</a>
+</div>
+</section>

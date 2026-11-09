@@ -1,0 +1,17 @@
+# Sección "Organizan". Para agregar auspiciadores, use la lista "auspiciadores"
+# con el mismo formato (si queda vacía, no se muestra).
+descripcion: >-
+  Grupo de Investigación ITDATA, Decanato, Vicedecanato Académico e Instituto de
+  Investigación de la Facultad de Ingeniería de Sistemas e Informática (FISI) de la
+  Universidad Nacional Mayor de San Marcos.
+pie: ITDATA · FISI · Universidad Nacional Mayor de San Marcos
+
+organizan:
+  - nombre: Grupo de Investigación ITDATA
+    logo: assets/2026/images/logo-itdata.jpeg
+    url: https://itdataperu.net/
+  - nombre: Facultad de Ingeniería de Sistemas e Informática - UNMSM
+    logo: assets/2026/images/logo-fisi-unmsm.png
+    url: https://sistemas.unmsm.edu.pe/
+
+auspiciadores: []

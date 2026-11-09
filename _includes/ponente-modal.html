@@ -1,0 +1,19 @@
+{%- assign ev = site.data.evento -%}
+<dialog id="ponente-modal" class="pmodal">
+<button type="button" class="pm-close" aria-label="Cerrar"><svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 1L13 13M13 1L1 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+<div class="pm-grid">
+<div class="pm-photowrap">
+<img class="pm-photo" src="" alt="">
+<div class="pm-scrim" aria-hidden="true"></div>
+<div class="pm-caption" aria-hidden="true"><span>{{ ev.edicion }} {{ ev.sigla }} {{ ev.anio }}</span><span>Ponente</span></div>
+<div class="pm-lime-edge" aria-hidden="true"></div>
+</div>
+<div class="pm-head">
+<h3 class="pm-name"></h3>
+<span class="pm-role"></span>
+</div>
+<div class="pm-rule" aria-hidden="true"></div>
+<a class="pm-linkedin" href="" target="_blank" rel="noopener noreferrer" style="display:none"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>LinkedIn</a>
+<div class="pm-bio"></div>
+</div>
+</dialog>

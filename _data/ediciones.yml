@@ -1,0 +1,20 @@
+# Ediciones anteriores, de la más reciente a la más antigua.
+# Al terminar una edición: mueva su sitio a past-events/<año>/ y agréguela aquí.
+# "destacada: true" la muestra al centro (más grande) en la galería de afiches.
+# Se muestran como máximo 3 afiches; los botones muestran todas las ediciones.
+- anio: "2025"
+  nombre: VI SICDAS
+  url: past-events/2025/index.html
+  afiche: assets/2026/images/afiche-2025.jpeg
+  leyenda: "VI SICDAS, edición 2025: 29 de diciembre, transmisión virtual."
+  destacada: true
+- anio: "2024"
+  nombre: V SICDAS
+  url: past-events/2024/index.html
+  afiche: assets/2026/images/afiche-2024.jpeg
+  leyenda: V SICDAS, edición 2024.
+- anio: "2023"
+  nombre: IV SICDAS
+  url: past-events/2023/index.html
+  afiche: assets/2026/images/afiche-2023.jpeg
+  leyenda: IV SICDAS, edición 2023.

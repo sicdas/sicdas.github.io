@@ -1,0 +1,110 @@
+{%- assign ev = site.data.evento -%}
+{%- capture nota_antes %}{{ ev.dia_semana }} {{ ev.fecha_texto }}, de {{ ev.hora_inicio }} a {{ ev.hora_fin }} (hora de Perú), modalidad {{ ev.modalidad | downcase }}.{% endcapture -%}
+{%- capture nota_durante %}¡El {{ ev.edicion }} {{ ev.sigla }} está en curso! Hoy, de {{ ev.hora_inicio }} a {{ ev.hora_fin }}.{% endcapture -%}
+<script>
+(function(){
+  // Cuenta regresiva (fechas en _data/evento.yml)
+  var start = new Date({{ ev.inicio_iso | jsonify }}).getTime();
+  var end = new Date({{ ev.fin_iso | jsonify }}).getTime();
+  var NOTA_ANTES = {{ nota_antes | jsonify }};
+  var NOTA_DURANTE = {{ nota_durante | jsonify }};
+  var NOTA_DESPUES = 'Esta edición ya terminó. Gracias por acompañarnos, nos vemos en la próxima.';
+  var box = document.getElementById('countdown');
+  var note = document.getElementById('countdown-note');
+  var units = [
+    { id: 'd', label: 'DÍAS' },
+    { id: 'h', label: 'HORAS' },
+    { id: 'm', label: 'MIN' },
+    { id: 's', label: 'SEG' }
+  ];
+  units.forEach(function(u){
+    var wrap = document.createElement('div');
+    wrap.style.cssText = 'display:flex;flex-direction:column;align-items:center;gap:4px';
+    wrap.innerHTML = '<span class="cdn" id="cd-'+u.id+'">00</span><span class="cdl">'+u.label+'</span>';
+    box.appendChild(wrap);
+  });
+  function pad(n){ return n < 10 ? '0'+n : ''+n; }
+  var timer;
+  function tick(){
+    var now = Date.now();
+    if (now >= start && now <= end) { box.style.display = 'none'; note.textContent = NOTA_DURANTE; return; }
+    if (now > end) { box.style.display = 'none'; note.textContent = NOTA_DESPUES; clearInterval(timer); return; }
+    var s = Math.floor(Math.max(0, start - now) / 1000);
+    var d = Math.floor(s / 86400); s -= d * 86400;
+    var h = Math.floor(s / 3600); s -= h * 3600;
+    var m = Math.floor(s / 60); s -= m * 60;
+    document.getElementById('cd-d').textContent = pad(d);
+    document.getElementById('cd-h').textContent = pad(h);
+    document.getElementById('cd-m').textContent = pad(m);
+    document.getElementById('cd-s').textContent = pad(s);
+    note.textContent = NOTA_ANTES;
+  }
+  tick();
+  timer = setInterval(tick, 1000);
+})();
+
+(function(){
+  // Ficha del ponente (datos en _data/ponentes.yml)
+  var PONENTES = {{ site.data.ponentes | jsonify }};
+  var GENERIC_PHOTO = {{ 'assets/2026/images/ponente-generico.svg' | relative_url | jsonify }};
+  var BASE = {{ site.baseurl | append: '/' | jsonify }};
+  var byId = {};
+  PONENTES.forEach(function(p){ byId[p.id] = p; });
+
+  var dialog = document.getElementById('ponente-modal');
+  var photoEl = dialog.querySelector('.pm-photo');
+  var nameEl = dialog.querySelector('.pm-name');
+  var roleEl = dialog.querySelector('.pm-role');
+  var linkedinEl = dialog.querySelector('.pm-linkedin');
+  var bioEl = dialog.querySelector('.pm-bio');
+
+  function esc(t){ return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function photoUrl(f){
+    if (!f) return GENERIC_PHOTO;
+    return /^(https?:)?\/\//.test(f) || f.charAt(0) === '/' ? f : BASE + f;
+  }
+
+  function openModal(id){
+    var p = byId[id];
+    if (!p) return;
+    photoEl.src = photoUrl(p.foto);
+    photoEl.alt = p.nombre;
+    nameEl.textContent = p.nombre;
+    var caption = [p.cargo, p.institucion].filter(Boolean).join(' · ');
+    roleEl.textContent = caption;
+    roleEl.style.display = caption ? '' : 'none';
+    if (p.linkedin) {
+      linkedinEl.href = p.linkedin;
+      linkedinEl.style.display = 'inline-flex';
+    } else {
+      linkedinEl.removeAttribute('href');
+      linkedinEl.style.display = 'none';
+    }
+    var html = p.tema ? '<p><strong>Tema:</strong> ' + esc(p.tema) + '</p>' : '';
+    var bio = p.bio || [];
+    html += bio.length
+      ? bio.map(function(par){ return '<p>' + esc(par).replace(/\n/g,'<br>') + '</p>'; }).join('')
+      : '<p style="font-style:italic;color:#8296AB">Biografía por confirmar.</p>';
+    bioEl.innerHTML = html;
+    dialog.showModal();
+  }
+
+  document.querySelectorAll('[data-id]').forEach(function(el){
+    el.addEventListener('click', function(){ openModal(el.dataset.id); });
+    el.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(el.dataset.id); }
+    });
+  });
+
+  // Pestañas del programa
+  document.querySelectorAll('.ptab').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.ptab').forEach(function(b){ b.setAttribute('aria-selected', b === btn ? 'true' : 'false'); });
+      document.querySelectorAll('.pday').forEach(function(d){ d.classList.toggle('active', d.dataset.day === btn.dataset.day); });
+    });
+  });
+
+  dialog.querySelector('.pm-close').addEventListener('click', function(){ dialog.close(); });
+  dialog.addEventListener('click', function(e){ if (e.target === dialog) dialog.close(); });
+})();
+</script>

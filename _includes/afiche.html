@@ -1,0 +1,14 @@
+{%- assign e = include.edicion -%}
+{%- if include.grande -%}
+<figure class="vid" style="margin:0;width:min(540px,100%);display:flex;flex-direction:column;gap:8px">
+<a href="{{ e.url | relative_url }}" style="display:block;position:relative;height:min(310px,56vw);background:#A6D92A;overflow:hidden">
+<img src="{{ e.afiche | relative_url }}" alt="Afiche del {{ e.nombre }} {{ e.anio }}" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block">
+</a>
+{%- else -%}
+<figure class="vid" style="margin:0;width:min(360px,100%);opacity:.55;display:flex;flex-direction:column;gap:8px">
+<a href="{{ e.url | relative_url }}" style="display:block;position:relative;height:min(230px,56vw);background:#8FA4C7;overflow:hidden">
+<img src="{{ e.afiche | relative_url }}" alt="Afiche del {{ e.nombre }} {{ e.anio }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block">
+</a>
+{%- endif %}
+<figcaption style="font-family:var(--font-display);font-style:italic;font-size:.95rem;line-height:1.5;color:#4A5B70">{{ e.leyenda }}</figcaption>
+</figure>

@@ -1,0 +1,67 @@
+# Datos principales de la edición actual.
+edicion: VII                     # número romano de la edición
+edicion_numero: 7                # el mismo número en cifras
+anio: 2026
+nombre: Seminario Internacional de Ciencia de Datos Aplicada a la Sociedad
+sigla: SICDAS
+
+# Fecha y hora (hora de Perú, GMT-5)
+fecha_texto: 27 de diciembre de 2026
+fecha_corta: 27 DICIEMBRE 2026
+dia_semana: Domingo
+hora_inicio: "12:00"
+hora_fin: "22:00"
+inicio_iso: "2026-12-27T12:00:00-05:00"   # usado por la cuenta regresiva
+fin_iso: "2026-12-27T22:00:00-05:00"
+
+ciudad: Lima – Perú
+modalidad: Virtual
+plataformas: Google Meet y YouTube
+sede: la FISI - UNMSM, Lima
+
+# Enlaces. Déjelos vacíos ("") hasta tenerlos; la página se adapta sola.
+inscripcion_url: ""        # formulario de inscripción (Google Forms)
+certificado_url: ""        # formulario de registro para certificado
+meet_url: ""               # enlace de Google Meet / Zoom
+youtube_url: ""            # transmisión en YouTube
+programa_pdf: ""           # p. ej. assets/2026/programa/PROGRAMA-VII-SICDAS.pdf
+
+# Textos de la sección "Sobre el evento"
+sobre:
+  - >-
+    El Grupo de Investigación ITDATA, el Decanato, el Vicedecanato Académico y el
+    Instituto de Investigación de la Facultad de Ingeniería de Sistemas e Informática
+    (FISI) de la Universidad Nacional Mayor de San Marcos (UNMSM) se complacen en
+    presentar la organización del VII Seminario Internacional de Ciencia de Datos
+    Aplicada a la Sociedad (SICDAS).
+  - >-
+    Su propósito es fomentar y fortalecer el intercambio de experiencias académicas e
+    investigativas entre profesionales y estudiantes de Ingeniería de Sistemas,
+    Ingeniería de Software, Computación e Informática, así como con todos los
+    participantes interesados.
+  - >-
+    El SICDAS aborda Big Data Analytics, Machine Learning, Data Mining, Business
+    Intelligence, Data Science, Open Data, Gobierno de Datos y Deep Learning, con
+    enfoque en su aplicación a los desafíos sociales. Habrá conferencias, una mesa
+    redonda, intercambio de ideas y experiencias, y certificados para los interesados.
+
+# Cifras bajo el texto "Sobre el evento"
+cifras:
+  - valor: "7"
+    etiqueta: EDICIONES
+  - valor: "10"
+    etiqueta: HORAS
+  - valor: "100%"
+    etiqueta: VIRTUAL
+
+# Textos de otras secciones
+ponentes_intro: >-
+  Investigadores y profesionales nacionales e internacionales compartirán experiencias
+  y aplicaciones reales de la ciencia de datos frente a los desafíos sociales.
+  Pronto anunciaremos a los ponentes confirmados.
+programa_intro: >-
+  Programa tentativo del domingo 27 de diciembre de 2026, de 12:00 a 22:00 (hora de
+  Perú, GMT-5). Los temas y horarios se confirmarán más adelante.
+modalidad_nota: >-
+  Los enlaces de acceso se publicarán en esta página y se enviarán a los inscritos
+  antes del evento.

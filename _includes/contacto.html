@@ -1,0 +1,20 @@
+{%- assign ct = site.data.contacto -%}
+<!-- CONTACTO (datos en _data/contacto.yml) -->
+<section id="contacto" style="padding:40px 16px 100px;display:flex;flex-direction:column;align-items:center;gap:30px;text-align:center">
+<div style="display:flex;flex-direction:column;align-items:center;gap:14px">
+<span class="t-eyebrow">06 / Contacto</span>
+<h2 class="t-h2">Escríbenos.</h2>
+<span aria-hidden="true" style="width:150px;height:3px;background:#A6D92A;margin-top:4px"></span>
+</div>
+<div style="width:min(900px,100%);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:16px;text-align:left">
+<div class="daycard"><span class="t-label" style="color:#8296AB">{{ ct.cargo }}</span><span style="font-size:1.05rem;font-weight:700">{{ ct.coordinador }}</span></div>
+<div class="daycard"><span class="t-label" style="color:#8296AB">CORREO</span><a href="mailto:{{ ct.correo }}" style="font-size:1.05rem;font-weight:700;text-decoration:none">{{ ct.correo }}</a></div>
+<div class="daycard"><span class="t-label" style="color:#8296AB">TELÉFONO</span><a href="tel:{{ ct.telefono | remove: ' ' }}" style="font-size:1.05rem;font-weight:700;text-decoration:none">{{ ct.telefono }}</a></div>
+<div class="daycard"><span class="t-label" style="color:#8296AB">DIRECCIÓN</span><span style="font-size:1.05rem;font-weight:700">{{ ct.direccion }}</span></div>
+</div>
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px">
+{%- for r in ct.redes %}
+<a class="edchip" href="{{ r.url }}" target="_blank" rel="noopener">{{ r.nombre }} →</a>
+{%- endfor %}
+</div>
+</section>

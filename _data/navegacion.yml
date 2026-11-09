@@ -1,0 +1,16 @@
+# Menú superior. "url" puede ser un ancla (#seccion) o un enlace externo.
+# El botón de inscripción se agrega solo, usando evento.inscripcion_url.
+- titulo: El evento
+  url: "#sobre"
+- titulo: Ponentes
+  url: "#ponentes"
+- titulo: Programa
+  url: "#programa"
+- titulo: Organizan
+  url: "#organizan"
+- titulo: Modalidad
+  url: "#modalidad"
+- titulo: Contacto
+  url: "#contacto"
+- titulo: Ediciones anteriores
+  url: "#ediciones"

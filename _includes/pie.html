@@ -1,0 +1,23 @@
+{%- assign ev = site.data.evento -%}
+{%- assign ct = site.data.contacto -%}
+{%- assign dia_mes = ev.fecha_texto | split: " de " -%}
+<!-- PIE -->
+<footer style="background:#0C1633;display:flex;flex-direction:column">
+<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:56px 24px;text-align:center">
+<span class="t-h2" style="color:#FFFFFF;font-size:clamp(2rem,4.4vw,3.6rem)">NOS VEMOS EL {{ dia_mes[0] }} DE {{ dia_mes[1] | upcase }}<span class="caret" aria-hidden="true"></span></span>
+</div>
+<div style="flex-wrap:wrap;gap:16px;padding:20px 24px;border-top:1px solid #22335A;display:flex;align-items:center;justify-content:space-between">
+<div style="display:flex;align-items:center;gap:10px">
+<img src="{{ 'assets/2026/images/favicon.png' | relative_url }}" alt="" style="width:28px;height:28px;object-fit:contain">
+<span class="t-label" style="color:#A6D92A">{{ ev.sigla }} · ITDATA · FISI · UNMSM</span>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:12px 24px;font-size:.88rem;font-weight:700">
+<a href="mailto:{{ ct.correo }}" style="color:#FFFFFF;text-decoration:none">{{ ct.correo }}</a>
+<span style="color:#FFFFFF">{{ ct.telefono }}</span>
+{%- for r in ct.redes limit:2 %}
+<a href="{{ r.url }}" target="_blank" rel="noopener" style="color:#FFFFFF;text-decoration:none">{{ r.nombre }}</a>
+{%- endfor %}
+<a href="#ediciones" style="color:#FFFFFF;text-decoration:none">EDICIONES ANTERIORES</a>
+</div>
+</div>
+</footer>

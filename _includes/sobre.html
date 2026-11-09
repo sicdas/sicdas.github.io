@@ -1,0 +1,31 @@
+{%- assign ev = site.data.evento -%}
+<!-- SOBRE -->
+<section id="sobre" style="padding:100px 16px 90px;display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center">
+<span class="t-eyebrow">01 / Sobre el evento</span>
+<h2 class="t-h2">Sobre el <em>{{ ev.edicion }} {{ ev.sigla }}.</em></h2>
+<span aria-hidden="true" style="width:150px;height:3px;background:#A6D92A;margin-top:4px"></span>
+{%- for parrafo in ev.sobre %}
+{%- if forloop.first %}
+<p class="t-lead" style="max-width:720px;color:#33475E">{{ parrafo }}</p>
+{%- else %}
+<p class="t-body" style="max-width:640px;color:#4A5B70">{{ parrafo }}</p>
+{%- endif %}
+{%- endfor %}
+
+<div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:44px;margin-top:10px">
+{%- for c in ev.cifras %}
+{%- unless forloop.first %}
+<span aria-hidden="true" style="width:1px;height:52px;background:#C9D1DA"></span>
+{%- endunless %}
+<div style="display:flex;flex-direction:column;gap:4px"><span class="t-stat">{{ c.valor }}</span><span class="t-stat-label" style="color:#4A5B70">{{ c.etiqueta | downcase }}</span></div>
+{%- endfor %}
+</div>
+<div id="ediciones" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;margin-top:4px">
+<span class="t-label" style="color:#4A5B70">Ediciones anteriores</span>
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px">
+{%- for e in site.data.ediciones %}
+<a class="edchip" href="{{ e.url | relative_url }}">{{ e.anio }} →</a>
+{%- endfor %}
+</div>
+</div>
+</section>

@@ -1,0 +1,107 @@
+# Ponentes. Cada ponente necesita un "id" único (se usa en programa.yml).
+# Para un ponente confirmado, reemplace los datos y la foto, por ejemplo:
+#
+# - id: maria-perez
+#   nombre: María Pérez Gómez
+#   cargo: Profesora de Ciencia de Datos
+#   institucion: Universidad X, España
+#   area: MACHINE LEARNING          # texto corto bajo el nombre en la rejilla
+#   foto: assets/2026/images/ponentes/maria-perez.jpg
+#   linkedin: https://www.linkedin.com/in/maria-perez/
+#   tema: Título de la conferencia
+#   bio:
+#     - Primer párrafo de la biografía.
+#     - Segundo párrafo (opcional).
+#
+# Si "foto" está vacío se usa la imagen genérica. Si "bio" está vacío se muestra
+# "Biografía por confirmar".
+
+- id: ponente-1
+  nombre: Ponente por confirmar
+  cargo: Conferencista
+  institucion: Institución por confirmar
+  area: Big Data Analytics
+  foto: ""
+  linkedin: ""
+  tema: "Conferencia: Big Data Analytics (tema por confirmar)"
+  bio: []
+
+- id: ponente-2
+  nombre: Ponente por confirmar
+  cargo: Conferencista
+  institucion: Institución por confirmar
+  area: Machine Learning
+  foto: ""
+  linkedin: ""
+  tema: "Conferencia: Machine Learning (tema por confirmar)"
+  bio: []
+
+- id: ponente-3
+  nombre: Ponente por confirmar
+  cargo: Conferencista
+  institucion: Institución por confirmar
+  area: Data Mining
+  foto: ""
+  linkedin: ""
+  tema: "Conferencia: Data Mining (tema por confirmar)"
+  bio: []
+
+- id: ponente-4
+  nombre: Ponente por confirmar
+  cargo: Conferencista
+  institucion: Institución por confirmar
+  area: Business Intelligence
+  foto: ""
+  linkedin: ""
+  tema: "Conferencia: Business Intelligence (tema por confirmar)"
+  bio: []
+
+- id: ponente-5
+  nombre: Ponente por confirmar
+  cargo: Conferencista
+  institucion: Institución por confirmar
+  area: Data Science
+  foto: ""
+  linkedin: ""
+  tema: "Conferencia: Data Science (tema por confirmar)"
+  bio: []
+
+- id: ponente-6
+  nombre: Ponente por confirmar
+  cargo: Conferencista
+  institucion: Institución por confirmar
+  area: Open Data
+  foto: ""
+  linkedin: ""
+  tema: "Conferencia: Open Data (tema por confirmar)"
+  bio: []
+
+- id: ponente-7
+  nombre: Ponente por confirmar
+  cargo: Conferencista
+  institucion: Institución por confirmar
+  area: Gobierno de Datos
+  foto: ""
+  linkedin: ""
+  tema: "Conferencia: Gobierno de Datos (tema por confirmar)"
+  bio: []
+
+- id: ponente-8
+  nombre: Ponente por confirmar
+  cargo: Conferencista
+  institucion: Institución por confirmar
+  area: Deep Learning
+  foto: ""
+  linkedin: ""
+  tema: "Conferencia: Deep Learning (tema por confirmar)"
+  bio: []
+
+- id: ponente-9
+  nombre: Ponente por confirmar
+  cargo: Conferencia magistral
+  institucion: Institución por confirmar
+  area: Ciencia de Datos y Sociedad
+  foto: ""
+  linkedin: ""
+  tema: "Conferencia: Ciencia de Datos y Sociedad (tema por confirmar)"
+  bio: []

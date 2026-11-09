@@ -1,0 +1,16 @@
+# Datos de contacto (sección Contacto y pie de página).
+coordinador: Prof. Ulises Román C.
+cargo: COORDINADOR ITDATA
+correo: nromanc@unmsm.edu.pe
+telefono: "+51 938 345 776"
+direccion: FISI - UNMSM, Calle Germán Amézaga s/n, Lima - Perú
+
+redes:
+  - nombre: FACEBOOK
+    url: https://www.facebook.com/SICDAS
+  - nombre: LINKEDIN
+    url: https://www.linkedin.com/company/sicdas/
+  - nombre: SITIO DE LA FISI
+    url: https://sistemas.unmsm.edu.pe/
+  - nombre: ITDATA
+    url: https://itdataperu.net/

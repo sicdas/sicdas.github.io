@@ -1,0 +1,29 @@
+# Programa del evento. Cada día tiene una pestaña.
+# Tipos de fila ("tipo"):
+#   evento  -> actividad normal. Use "ponente: <id>" para una conferencia de ponentes.yml,
+#              o "titulo" + "detalle" para otras actividades.
+#   pausa   -> descanso (se muestra en gris).
+#   destacado -> fila resaltada en azul; "etiqueta" es el texto pequeño (p. ej. MESA REDONDA).
+# "bloque" agrupa filas bajo un título (TARDE, NOCHE, MAÑANA...).
+# "logo" (opcional) muestra un logo en vez de la foto del ponente.
+# "inscripcion" (opcional) agrega un botón INSCRÍBETE con ese enlace.
+
+- id: dom
+  pestana: DOM 27 DIC
+  filas:
+    - { bloque: TARDE, inicio: "12:00", fin: "12:15", tipo: evento, titulo: Inauguración, detalle: Autoridades de la FISI - UNMSM, logo: assets/2026/images/logo-fisi-unmsm.png }
+    - { bloque: TARDE, inicio: "12:15", fin: "12:30", tipo: evento, titulo: Presentación del VII SICDAS, detalle: "Prof. Ulises Román C. · Coordinador ITDATA", logo: assets/2026/images/logo-itdata.jpeg }
+    - { bloque: TARDE, inicio: "12:30", fin: "13:15", tipo: evento, ponente: ponente-1 }
+    - { bloque: TARDE, inicio: "13:15", fin: "14:00", tipo: evento, ponente: ponente-2 }
+    - { bloque: TARDE, inicio: "14:00", fin: "14:45", tipo: evento, ponente: ponente-3 }
+    - { bloque: TARDE, inicio: "14:45", fin: "15:00", tipo: pausa, titulo: Pausa }
+    - { bloque: TARDE, inicio: "15:00", fin: "15:45", tipo: evento, ponente: ponente-4 }
+    - { bloque: TARDE, inicio: "15:45", fin: "16:30", tipo: evento, ponente: ponente-5 }
+    - { bloque: TARDE, inicio: "16:30", fin: "17:15", tipo: evento, ponente: ponente-6 }
+    - { bloque: TARDE, inicio: "17:15", fin: "18:00", tipo: evento, ponente: ponente-7 }
+    - { bloque: NOCHE, inicio: "18:00", fin: "18:45", tipo: evento, ponente: ponente-8 }
+    - { bloque: NOCHE, inicio: "18:45", fin: "19:00", tipo: pausa, titulo: Pausa }
+    - { bloque: NOCHE, inicio: "19:00", fin: "20:30", tipo: destacado, etiqueta: MESA REDONDA, titulo: "Mesa redonda: la ciencia de datos frente a los desafíos sociales", detalle: Panelistas por confirmar, logo: assets/2026/images/logo-itdata.jpeg }
+    - { bloque: NOCHE, inicio: "20:30", fin: "21:15", tipo: evento, ponente: ponente-9 }
+    - { bloque: NOCHE, inicio: "21:15", fin: "21:45", tipo: evento, titulo: Intercambio de ideas y experiencias, detalle: Ponentes y participantes, logo: assets/2026/images/logo-itdata.jpeg }
+    - { bloque: NOCHE, inicio: "21:45", fin: "22:00", tipo: evento, titulo: Clausura, detalle: "Comité organizador · FISI - UNMSM", logo: assets/2026/images/logo-fisi-unmsm.png }

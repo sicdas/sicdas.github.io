@@ -1,0 +1,17 @@
+{%- comment -%} Afiches de ediciones anteriores: la destacada al centro, hasta 2 más a los lados. {%- endcomment -%}
+{%- assign destacada = site.data.ediciones | where: "destacada", true | first -%}
+{%- assign otras = site.data.ediciones | where_exp: "e", "e.destacada != true" -%}
+{%- assign izquierda = otras[0] -%}
+{%- assign derecha = otras[1] -%}
+<!-- GALERÍA: afiches de ediciones anteriores -->
+<section aria-label="Ediciones anteriores" class="editions-gallery" style="position:relative;z-index:3;display:flex;flex-wrap:wrap;justify-content:center;gap:22px;align-items:flex-start;padding:0 16px">
+{%- if izquierda %}
+{% include afiche.html edicion=izquierda grande=false %}
+{%- endif %}
+{%- if destacada %}
+{% include afiche.html edicion=destacada grande=true %}
+{%- endif %}
+{%- if derecha %}
+{% include afiche.html edicion=derecha grande=false %}
+{%- endif %}
+</section>

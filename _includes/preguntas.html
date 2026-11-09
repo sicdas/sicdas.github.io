@@ -1,0 +1,13 @@
+<!-- PREGUNTAS (datos en _data/preguntas.yml) -->
+<section id="faq" style="padding:90px 16px 40px;display:flex;flex-direction:column;align-items:center;gap:30px;text-align:center">
+<div style="display:flex;flex-direction:column;align-items:center;gap:14px">
+<span class="t-eyebrow">05 / Dudas</span>
+<h2 class="t-h2">Preguntas <em>frecuentes.</em></h2>
+<span aria-hidden="true" style="width:150px;height:3px;background:#A6D92A;margin-top:4px"></span>
+</div>
+<div style="width:min(900px,100%);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:30px 60px;text-align:left">
+{%- for q in site.data.preguntas %}
+<div style="display:flex;flex-direction:column;gap:6px"><h3 class="t-faq-q">{{ q.pregunta }}</h3><p class="t-body" style="color:#4A5B70">{{ q.respuesta }}</p></div>
+{%- endfor %}
+</div>
+</section>

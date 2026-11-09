@@ -1,0 +1,57 @@
+{%- assign ev = site.data.evento -%}
+<!-- PROGRAMA (datos en _data/programa.yml) -->
+<section id="programa" style="padding:100px 16px;display:flex;flex-direction:column;align-items:center;gap:30px">
+<div style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center">
+<span class="t-eyebrow">03 / Agenda</span>
+<h2 class="t-h2">El <em>programa.</em></h2>
+<span aria-hidden="true" style="width:150px;height:3px;background:#A6D92A;margin-top:4px"></span>
+<p class="t-body" style="max-width:600px;color:#4A5B70">{{ ev.programa_intro }}</p>
+{%- if ev.programa_pdf != "" %}
+<a class="edchip" href="{{ ev.programa_pdf | relative_url }}" target="_blank" rel="noopener">DESCARGAR PROGRAMA (PDF) →</a>
+{%- endif %}
+</div>
+<div class="ptabs" role="tablist" aria-label="Día del programa">
+{%- for dia in site.data.programa %}
+<button type="button" class="ptab" role="tab" data-day="{{ dia.id }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}">{{ dia.pestana }}</button>
+{%- endfor %}
+</div>
+<div style="width:min(920px,100%);background:#FFFFFF;outline:1.5px dashed #C9D1DA;outline-offset:-1.5px">
+{%- for dia in site.data.programa %}
+<div class="pday{% if forloop.first %} active{% endif %}" data-day="{{ dia.id }}">
+{%- assign bloque_actual = nil %}
+{%- for f in dia.filas %}
+{%- if f.bloque != bloque_actual %}
+{%- if bloque_actual %}</div>{% endif %}
+<div class="psec-label">{{ f.bloque }}</div><div class="ptimeline">
+{%- assign bloque_actual = f.bloque %}
+{%- endif %}
+{%- assign p = nil %}
+{%- if f.ponente %}{% assign p = site.data.ponentes | where: "id", f.ponente | first %}{% endif %}
+{%- if f.titulo %}{% assign titulo = f.titulo %}{% elsif p %}{% assign titulo = p.tema | default: p.nombre %}{% else %}{% assign titulo = "" %}{% endif %}
+{%- assign autor = nil %}{% if p and f.titulo == nil and p.tema %}{% assign autor = p.nombre %}{% endif %}
+{%- if f.detalle %}{% assign detalle = f.detalle %}{% elsif p %}{% assign detalle = p.cargo | append: " · " | append: p.institucion %}{% else %}{% assign detalle = "" %}{% endif %}
+{%- if p and p.foto and p.foto != "" %}{% assign foto = p.foto %}{% else %}{% assign foto = "assets/2026/images/ponente-generico.svg" %}{% endif %}
+<div class="prow{% if f.tipo == 'pausa' %} is-break{% endif %}{% if f.tipo == 'destacado' %} is-taller{% endif %}{% if p %} linked{% endif %}"{% if p %} data-id="{{ p.id }}" tabindex="0" role="button" aria-label="Ver detalles: {{ titulo | escape }}"{% endif %}>
+<div class="prow-time">{{ f.inicio }}{% if f.fin %}<small>– {{ f.fin }}</small>{% endif %}</div>
+<div class="prow-marker"><span class="prow-dot"></span></div>
+<div class="prow-body">
+{%- if f.tipo != 'pausa' %}
+{%- if f.logo %}<div class="prow-avatar is-logo"><img src="{{ f.logo | relative_url }}" alt="" loading="lazy"></div>
+{%- else %}<div class="prow-avatar"><img src="{{ foto | relative_url }}" alt="" loading="lazy"></div>
+{%- endif %}
+{%- endif %}
+<div class="prow-text">
+{%- if f.tipo == 'destacado' and f.etiqueta %}<span class="tlabel">{{ f.etiqueta }}</span>{% endif %}
+{%- if titulo != "" %}<span class="prow-title">{{ titulo }}</span>{% endif %}
+{%- if autor %}<span class="prow-topic">{{ autor }}</span>{% endif %}
+{%- if detalle != "" %}<span class="prow-sub">{{ detalle }}</span>{% endif %}
+</div>
+{%- if f.inscripcion %}<a class="prow-cta" href="{{ f.inscripcion }}" target="_blank" rel="noopener" onclick="event.stopPropagation()">INSCRÍBETE</a>{% endif %}
+</div>
+</div>
+{%- endfor %}
+{%- if bloque_actual %}</div>{% endif %}
+</div>
+{%- endfor %}
+</div>
+</section>

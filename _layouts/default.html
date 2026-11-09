@@ -1,0 +1,23 @@
+{%- assign ev = site.data.evento -%}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ ev.edicion }} {{ ev.sigla }} {{ ev.anio }} - {{ ev.nombre }}</title>
+<meta name="description" content="{{ ev.edicion }} {{ ev.nombre }} ({{ ev.sigla }}), {{ ev.fecha_texto }}, modalidad {{ ev.modalidad | downcase }}. {{ site.description | strip_newlines | escape }}">
+<meta property="og:title" content="{{ ev.edicion }} {{ ev.sigla }} {{ ev.anio }}">
+<meta property="og:description" content="{{ ev.edicion }} {{ ev.nombre }}. {{ ev.fecha_texto }}, {{ ev.ciudad }}, modalidad {{ ev.modalidad | downcase }}.">
+<meta property="og:url" content="{{ site.url }}/">
+<meta property="og:image" content="{{ site.url }}/assets/2026/images/hero-bg.jpg">
+<link rel="shortcut icon" href="{{ 'assets/2026/images/favicon.png' | relative_url }}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ 'assets/2026/css/sicdas.css' | relative_url }}">
+</head>
+<body>
+{{ content }}
+</body>
+</html>
