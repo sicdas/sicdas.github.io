@@ -2,17 +2,17 @@
 <!-- MODALIDAD / SEDE -->
 <section id="modalidad" style="position:relative;min-height:600px;background:#0C1633;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;color:#FFFFFF;padding:60px 16px">
 <img src="{{ 'assets/2026/images/hero-bg.jpg' | relative_url }}" alt="" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.1);opacity:.26">
-<span class="bar" aria-hidden="true" style="left:8%;top:120px;width:10px;height:120px;background:#A6D92A;animation-duration:8s;animation-delay:-3s"></span>
+<span class="bar" aria-hidden="true" style="left:8%;top:120px;width:10px;height:120px;background:var(--acento);animation-duration:8s;animation-delay:-3s"></span>
 <span class="bar" aria-hidden="true" style="left:30%;top:360px;width:8px;height:90px;background:#FFFFFF;animation-duration:6s;animation-delay:-1s"></span>
-<span class="bar" aria-hidden="true" style="left:70%;top:300px;width:10px;height:140px;background:#A6D92A;animation-duration:7.5s;animation-delay:-4s"></span>
+<span class="bar" aria-hidden="true" style="left:70%;top:300px;width:10px;height:140px;background:var(--acento);animation-duration:7.5s;animation-delay:-4s"></span>
 <span class="bar" aria-hidden="true" style="left:90%;top:90px;width:8px;height:100px;background:#FFFFFF;animation-duration:7s;animation-delay:-1.5s"></span>
-<span class="t-label" style="position:relative;z-index:5;color:#A6D92A">{{ ev.fecha_texto }} · {{ ev.hora_inicio }} – {{ ev.hora_fin }}</span>
+<span class="t-label" style="position:relative;z-index:5;color:var(--acento)">{{ ev.fecha_texto }} · {{ ev.hora_inicio }} – {{ ev.hora_fin }}</span>
 <h2 class="t-h2" style="position:relative;z-index:5">Modalidad <em>{{ ev.modalidad | downcase }}.</em></h2>
 <span class="t-tagline" style="position:relative;z-index:5">Transmisión por {{ ev.plataformas }} desde {{ ev.sede }}</span>
 <span class="t-body" style="position:relative;z-index:5;margin-top:12px;color:#C9D5E3;max-width:520px">{{ ev.modalidad_nota }}</span>
 <div style="position:relative;z-index:5;margin-top:10px;display:flex;flex-wrap:wrap;justify-content:center;gap:16px">
 {%- if ev.meet_url != "" %}
-<a href="{{ ev.meet_url }}" target="_blank" rel="noopener" class="ghost glow t-btn" style="display:inline-flex;align-items:center;height:50px;padding:0 30px;border:2px solid #A6D92A;background:#A6D92A;color:#0C1633;text-decoration:none">ACCEDER A LAS CONFERENCIAS</a>
+<a href="{{ ev.meet_url }}" target="_blank" rel="noopener" class="ghost glow t-btn" style="display:inline-flex;align-items:center;height:50px;padding:0 30px;border:2px solid var(--acento);background:var(--acento);color:#0C1633;text-decoration:none">ACCEDER A LAS CONFERENCIAS</a>
 {%- endif %}
 {%- if ev.youtube_url != "" %}
 <a href="{{ ev.youtube_url }}" target="_blank" rel="noopener" class="ghost t-btn" style="display:inline-flex;align-items:center;height:50px;padding:0 30px;border:2px solid #FFFFFF;color:#FFFFFF;text-decoration:none">VER EN YOUTUBE</a>

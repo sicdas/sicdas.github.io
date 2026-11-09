@@ -1,0 +1,12 @@
+# Colores de acento que se pueden elegir con el botón de engranaje (abajo a la izquierda).
+# El primero es el color por defecto del sitio. Use colores claros o vivos:
+# el fondo del sitio es azul oscuro (#0C1633) y los botones usan texto azul oscuro.
+colores:
+  - { nombre: "Lima (original)", valor: "#A6D92A" }
+  - { nombre: "Menta",           valor: "#99FFD6" }
+  - { nombre: "Verde",           valor: "#00AA55" }
+  - { nombre: "Naranja",         valor: "#FF5A00" }
+  - { nombre: "Rosa",            valor: "#FF99F0" }
+  - { nombre: "Amarillo",        valor: "#F5D300" }
+  - { nombre: "Celeste",         valor: "#A6E8FF" }
+  - { nombre: "Azul",            valor: "#14B4E8" }

@@ -16,8 +16,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ 'assets/2026/css/sicdas.css' | relative_url }}">
+<script>try{var a=localStorage.getItem('sicdas-acento');if(/^#[0-9A-Fa-f]{6}$/.test(a))document.documentElement.style.setProperty('--acento',a)}catch(e){}</script>
 </head>
 <body>
 {{ content }}
+{% include paleta.html %}
 </body>
 </html>

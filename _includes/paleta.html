@@ -1,0 +1,44 @@
+{%- comment -%}
+  Botón de engranaje para elegir el color de acento (antes solo verde #A6D92A).
+  Los colores se editan en _data/paleta.yml. La elección se guarda en el navegador.
+{%- endcomment -%}
+{%- assign pal = site.data.paleta.colores -%}
+<div class="paleta" id="paleta">
+<button type="button" class="paleta-btn" id="paleta-btn" aria-expanded="false" aria-controls="paleta-panel" title="Elegir color" aria-label="Elegir color de acento">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+</button>
+<div class="paleta-panel" id="paleta-panel" role="group" aria-label="Color de acento" hidden>
+<span class="paleta-titulo">COLOR</span>
+<div class="paleta-colores">
+{%- for c in pal %}
+<button type="button" class="paleta-color" data-color="{{ c.valor }}" style="background:{{ c.valor }}" title="{{ c.nombre }}" aria-label="{{ c.nombre }}" aria-pressed="false"></button>
+{%- endfor %}
+</div>
+</div>
+</div>
+<script>
+(function(){
+  var DEF = {{ pal[0].valor | jsonify }}, KEY = 'sicdas-acento';
+  var raiz = document.documentElement, btn = document.getElementById('paleta-btn'),
+      panel = document.getElementById('paleta-panel'),
+      colores = panel.querySelectorAll('.paleta-color');
+  function marcar(c){
+    for (var i = 0; i < colores.length; i++)
+      colores[i].setAttribute('aria-pressed', colores[i].getAttribute('data-color') === c ? 'true' : 'false');
+  }
+  function aplicar(c, guardar){
+    raiz.style.setProperty('--acento', c);
+    marcar(c);
+    if (guardar) { try { c === DEF ? localStorage.removeItem(KEY) : localStorage.setItem(KEY, c); } catch(e){} }
+  }
+  var actual = DEF;
+  try { actual = localStorage.getItem(KEY) || DEF; } catch(e){}
+  marcar(actual);
+  function abrir(si){ panel.hidden = !si; btn.setAttribute('aria-expanded', si ? 'true' : 'false'); }
+  btn.addEventListener('click', function(){ abrir(panel.hidden); });
+  for (var i = 0; i < colores.length; i++)
+    colores[i].addEventListener('click', function(){ aplicar(this.getAttribute('data-color'), true); });
+  document.addEventListener('click', function(e){ if (!document.getElementById('paleta').contains(e.target)) abrir(false); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') { abrir(false); btn.focus(); } });
+})();
+</script>

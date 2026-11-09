@@ -3,7 +3,7 @@
 <section id="sobre" style="padding:100px 16px 90px;display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center">
 <span class="t-eyebrow">01 / Sobre el evento</span>
 <h2 class="t-h2">Sobre el <em>{{ ev.edicion }} {{ ev.sigla }}.</em></h2>
-<span aria-hidden="true" style="width:150px;height:3px;background:#A6D92A;margin-top:4px"></span>
+<span aria-hidden="true" style="width:150px;height:3px;background:var(--acento);margin-top:4px"></span>
 {%- for parrafo in ev.sobre %}
 {%- if forloop.first %}
 <p class="t-lead" style="max-width:720px;color:#33475E">{{ parrafo }}</p>
