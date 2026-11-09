@@ -7,8 +7,8 @@
 <p class="t-lead" style="max-width:640px;color:#E3E8ED">{{ ct.intro }}</p>
 <ul class="info-list" style="margin-top:16px">
 <li class="info-item"><span class="info-key"><span>01</span>{{ ct.cargo }}</span><span class="info-val">{{ ct.coordinador }}</span></li>
-<li class="info-item"><span class="info-key"><span>02</span>Correo</span><span class="info-val"><a href="mailto:{{ ct.correo }}">{{ ct.correo }}</a></span></li>
-<li class="info-item"><span class="info-key"><span>03</span>Teléfono</span><span class="info-val"><a href="tel:{{ ct.telefono | remove: ' ' }}">{{ ct.telefono }}</a></span></li>
+<li class="info-item"><span class="info-key"><span>02</span>Correo</span><span class="info-val"><img class="dato-img" src="{{ ct.correo_imagen | relative_url }}" alt="Correo: {{ ct.correo_alt }}" height="20"></span></li>
+<li class="info-item"><span class="info-key"><span>03</span>Teléfono</span><span class="info-val"><img class="dato-img" src="{{ ct.telefono_imagen | relative_url }}" alt="Teléfono del coordinador (ver imagen)" height="20"></span></li>
 <li class="info-item"><span class="info-key"><span>04</span>Dirección</span><span class="info-val">{{ ct.direccion }}</span></li>
 </ul>
 <div class="redes" aria-label="Redes y sitios">

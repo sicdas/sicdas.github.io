@@ -171,6 +171,8 @@ dialog.pmodal .pm-bio{font-family:var(--font-sans);font-size:1rem}
 .info-key span{color:#A6D92A;font-weight:400;margin-right:12px}
 .info-val{font-size:1rem;line-height:1.65;color:#A9B6C4;overflow-wrap:anywhere}
 .info-val a{color:#A9B6C4;text-decoration:none;border-bottom:1px solid #2A3A60}
+.dato-img{display:block;width:auto;max-width:100%;user-select:none}
+.info-val .dato-img{margin:3px 0}
 .info-val a:hover{color:#FFFFFF;border-bottom-color:#A6D92A}
 .t-h2 em.accent{color:#A6D92A}
 .edchip-dark{border-color:#2A3A60;color:#FFFFFF}

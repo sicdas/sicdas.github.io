@@ -6,8 +6,16 @@ intro: >-
   Escríbenos y el comité organizador te responderá.
 coordinador: Prof. Ulises Román C.
 cargo: COORDINADOR ITDATA
-correo: nromanc@unmsm.edu.pe
-telefono: "+51 938 345 776"
+# Correo y teléfono se muestran como imágenes para evitar el spam
+# (los robots no pueden leer el texto). Para cambiarlos, ejecute:
+#   python3 _scripts/texto-a-imagen.py "nuevo@correo.pe" "+51 999 999 999"
+# Las imágenes se guardan en assets/2026/images/contacto/.
+# Si cambia el correo, actualice también correo_alt (texto para lectores de pantalla).
+correo_alt: nromanc [arroba] unmsm [punto] edu [punto] pe
+correo_imagen: assets/2026/images/contacto/correo.png
+telefono_imagen: assets/2026/images/contacto/telefono.png
+correo_imagen_pie: assets/2026/images/contacto/correo-pie.png
+telefono_imagen_pie: assets/2026/images/contacto/telefono-pie.png
 direccion: FISI - UNMSM, Calle Germán Amézaga s/n, Lima - Perú
 
 # Redes y sitios. Cada uno se muestra con su logo:

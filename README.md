@@ -14,7 +14,7 @@ Todo el contenido está en archivos YAML dentro de `_data/`. No hace falta tocar
 | `_data/ponentes.yml` | Ponentes: nombre, cargo, institución, foto, LinkedIn, tema y biografía |
 | `_data/programa.yml` | Programa por día y por hora |
 | `_data/organizadores.yml` | Organizadores y auspiciadores (logos y enlaces) |
-| `_data/contacto.yml` | Coordinador, correo, teléfono, dirección y redes sociales |
+| `_data/contacto.yml` | Coordinador, dirección y redes sociales. Correo y teléfono son imágenes: use `_scripts/texto-a-imagen.py` |
 | `_data/preguntas.yml` | Preguntas frecuentes |
 | `_data/ediciones.yml` | Ediciones anteriores (afiches y enlaces) |
 

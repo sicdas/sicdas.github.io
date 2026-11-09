@@ -12,8 +12,8 @@
 <span class="t-label" style="color:#A6D92A">{{ ev.sigla }} · ITDATA · FISI · UNMSM</span>
 </div>
 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px;font-size:.88rem;font-weight:700">
-<a href="mailto:{{ ct.correo }}" style="color:#FFFFFF;text-decoration:none">{{ ct.correo }}</a>
-<span style="color:#FFFFFF">{{ ct.telefono }}</span>
+<img class="dato-img" src="{{ ct.correo_imagen_pie | relative_url }}" alt="Correo: {{ ct.correo_alt }}" height="17">
+<img class="dato-img" src="{{ ct.telefono_imagen_pie | relative_url }}" alt="Teléfono de contacto (ver imagen)" height="17">
 {%- for r in ct.redes %}{% if r.icono %}
 {% include red-logo.html red=r tamano="pequeno" %}
 {%- endif %}{% endfor %}
