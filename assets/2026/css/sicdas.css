@@ -1,4 +1,4 @@
-:root{--acento:#A6D92A;--font-sans:"Outfit",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;--font-display:"Fraunces",Georgia,serif;--font-mono:"Space Mono",ui-monospace,monospace}
+:root{--acento:#FC4D79;--font-sans:"Outfit",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;--font-display:"Fraunces",Georgia,serif;--font-mono:"Space Mono",ui-monospace,monospace}
 body{margin:0;font-family:var(--font-sans);color:#0C1633;background:#EEF3F5}
 a{color:#0C1633}a:hover{color:#1E3A6E}
 .serif{font-family:var(--font-display)}

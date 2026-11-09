@@ -2,6 +2,7 @@
 # El primero es el color por defecto del sitio. Use colores claros o vivos:
 # el fondo del sitio es azul oscuro (#0C1633) y los botones usan texto azul oscuro.
 colores:
+  - { nombre: "Rosa SICDAS",     valor: "#FC4D79" }
   - { nombre: "Lima (original)", valor: "#A6D92A" }
   - { nombre: "Menta",           valor: "#99FFD6" }
   - { nombre: "Verde",           valor: "#00AA55" }
