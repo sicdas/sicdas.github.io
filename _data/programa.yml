@@ -8,8 +8,8 @@
 # "logo" (opcional) muestra un logo en vez de la foto del ponente.
 # "inscripcion" (opcional) agrega un botón INSCRÍBETE con ese enlace.
 
-- id: dom
-  pestana: DOM 27 DIC
+- id: vie
+  pestana: VIE 18 DIC
   filas:
     - { bloque: TARDE, inicio: "12:00", fin: "12:15", tipo: evento, titulo: Inauguración, detalle: Autoridades de la FISI - UNMSM, logo: assets/2026/images/logo-fisi-unmsm.png }
     - { bloque: TARDE, inicio: "12:15", fin: "12:30", tipo: evento, titulo: Presentación del VII SICDAS, detalle: "Prof. Ulises Román C. · Coordinador ITDATA", logo: assets/2026/images/logo-itdata.jpeg }

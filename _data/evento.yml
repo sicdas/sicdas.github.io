@@ -6,13 +6,13 @@ nombre: Seminario Internacional de Ciencia de Datos Aplicada a la Sociedad
 sigla: SICDAS
 
 # Fecha y hora (hora de Perú, GMT-5)
-fecha_texto: 27 de diciembre de 2026
-fecha_corta: 27 DICIEMBRE 2026
-dia_semana: Domingo
+fecha_texto: 18 de diciembre de 2026
+fecha_corta: 18 DICIEMBRE 2026
+dia_semana: Viernes
 hora_inicio: "12:00"
 hora_fin: "22:00"
-inicio_iso: "2026-12-27T12:00:00-05:00"   # usado por la cuenta regresiva
-fin_iso: "2026-12-27T22:00:00-05:00"
+inicio_iso: "2026-12-18T12:00:00-05:00"   # usado por la cuenta regresiva
+fin_iso: "2026-12-18T22:00:00-05:00"
 
 ciudad: Lima – Perú
 modalidad: Virtual
@@ -60,7 +60,7 @@ ponentes_intro: >-
   y aplicaciones reales de la ciencia de datos frente a los desafíos sociales.
   Pronto anunciaremos a los ponentes confirmados.
 programa_intro: >-
-  Programa tentativo del domingo 27 de diciembre de 2026, de 12:00 a 22:00 (hora de
+  Programa tentativo del viernes 18 de diciembre de 2026, de 12:00 a 22:00 (hora de
   Perú, GMT-5). Los temas y horarios se confirmarán más adelante.
 modalidad_nota: >-
   Los enlaces de acceso se publicarán en esta página y se enviarán a los inscritos
