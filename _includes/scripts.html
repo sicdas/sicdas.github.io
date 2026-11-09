@@ -1,12 +1,10 @@
 {%- assign ev = site.data.evento -%}
-{%- capture nota_antes %}{{ ev.dia_semana }} {{ ev.fecha_texto }}, de {{ ev.hora_inicio }} a {{ ev.hora_fin }} (hora de Perú), modalidad {{ ev.modalidad | downcase }}.{% endcapture -%}
 {%- capture nota_durante %}¡El {{ ev.edicion }} {{ ev.sigla }} está en curso! Hoy, de {{ ev.hora_inicio }} a {{ ev.hora_fin }}.{% endcapture -%}
 <script>
 (function(){
   // Cuenta regresiva (fechas en _data/evento.yml)
   var start = new Date({{ ev.inicio_iso | jsonify }}).getTime();
   var end = new Date({{ ev.fin_iso | jsonify }}).getTime();
-  var NOTA_ANTES = {{ nota_antes | jsonify }};
   var NOTA_DURANTE = {{ nota_durante | jsonify }};
   var NOTA_DESPUES = 'Esta edición ya terminó. Gracias por acompañarnos, nos vemos en la próxima.';
   var box = document.getElementById('countdown');
@@ -37,7 +35,6 @@
     document.getElementById('cd-h').textContent = pad(h);
     document.getElementById('cd-m').textContent = pad(m);
     document.getElementById('cd-s').textContent = pad(s);
-    note.textContent = NOTA_ANTES;
   }
   tick();
   timer = setInterval(tick, 1000);

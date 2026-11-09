@@ -1,16 +1,31 @@
 # Datos de contacto (sección Contacto y pie de página).
+titulo: Contacto            # primera parte del título
+titulo_acento: SICDAS.      # parte en cursiva (color de acento)
+intro: >-
+  ¿Tienes dudas sobre el seminario, las inscripciones o los certificados?
+  Escríbenos y el comité organizador te responderá.
 coordinador: Prof. Ulises Román C.
 cargo: COORDINADOR ITDATA
 correo: nromanc@unmsm.edu.pe
 telefono: "+51 938 345 776"
 direccion: FISI - UNMSM, Calle Germán Amézaga s/n, Lima - Perú
 
+# Redes y sitios. Cada uno se muestra con su logo:
+#   icono: facebook | linkedin | instagram | youtube | x | tiktok   (ícono incluido)
+#   logo: ruta a una imagen (para sitios sin ícono propio)
+#   fondo_blanco: true  -> pone el logo sobre un recuadro blanco
+# "nombre" no se ve en la página; lo leen los lectores de pantalla.
 redes:
-  - nombre: FACEBOOK
+  - nombre: Facebook
     url: https://www.facebook.com/SICDAS
-  - nombre: LINKEDIN
+    icono: facebook
+  - nombre: LinkedIn
     url: https://www.linkedin.com/company/sicdas/
-  - nombre: SITIO DE LA FISI
+    icono: linkedin
+  - nombre: Sitio de la FISI - UNMSM
     url: https://sistemas.unmsm.edu.pe/
-  - nombre: ITDATA
+    logo: assets/2026/images/logo-fisi-recortado.png
+  - nombre: Grupo de Investigación ITDATA
     url: https://itdataperu.net/
+    logo: assets/2026/images/logo-itdata.jpeg
+    fondo_blanco: true

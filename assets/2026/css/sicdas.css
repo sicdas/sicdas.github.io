@@ -162,3 +162,28 @@ dialog.pmodal .pm-bio{font-family:var(--font-sans);font-size:1rem}
 @media (min-width:900px){.prow-time{font-size:1.5rem}.prow-time small{font-size:.75rem}.prow-title{font-size:1.2rem}.prow-sub{font-size:.95rem}.psec-label{font-size:.72rem}}
 @media (max-width:767px){.editions-gallery{margin-top:-60px}}
 @media (max-width:640px){.t-nav{font-size:.78rem;gap:8px 16px !important}.t-prompt{font-size:.72rem}.bar{display:none}.t-label{letter-spacing:.08em}}
+
+/* Lista numerada estilo semcomp-unmsm.org ("Organiza SEMCOMP.") */
+.info-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:32px;width:100%;margin:0;padding:0;list-style:none}
+@media (max-width:640px){.info-list{grid-template-columns:1fr}}
+.info-item{display:flex;flex-direction:column;gap:10px;padding:22px 0 28px;border-top:1px solid #2A3A60;min-width:0}
+.info-key{font-family:var(--font-mono);font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#FFFFFF}
+.info-key span{color:#A6D92A;font-weight:400;margin-right:12px}
+.info-val{font-size:1rem;line-height:1.65;color:#A9B6C4;overflow-wrap:anywhere}
+.info-val a{color:#A9B6C4;text-decoration:none;border-bottom:1px solid #2A3A60}
+.info-val a:hover{color:#FFFFFF;border-bottom-color:#A6D92A}
+.t-h2 em.accent{color:#A6D92A}
+.edchip-dark{border-color:#2A3A60;color:#FFFFFF}
+.edchip-dark:hover{background-color:#A6D92A;border-color:#A6D92A;color:#0C1633}
+
+/* Logos de redes y sitios */
+.redes{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.red-icono{display:inline-flex;align-items:center;justify-content:center;border-radius:50%;color:#FFFFFF;border:1.5px solid #2A3A60;transition:background-color .2s ease,color .2s ease,border-color .2s ease}
+.red-icono:hover,.red-icono:focus-visible{background:#A6D92A;border-color:#A6D92A;color:#0C1633}
+.red-icono.red-grande{width:52px;height:52px}.red-icono.red-grande svg{width:22px;height:22px}
+.red-icono.red-pequeno{width:34px;height:34px;border-color:transparent}.red-icono.red-pequeno svg{width:17px;height:17px}
+.red-logo{display:inline-flex;align-items:center;height:52px;padding:0 14px;border:1.5px solid #2A3A60;box-sizing:border-box;transition:border-color .2s ease}
+.red-logo img{height:40px;width:auto;display:block}
+.red-logo:hover,.red-logo:focus-visible{border-color:#A6D92A}
+.red-logo-blanco{background:#FFFFFF;border-color:#FFFFFF;padding:0 10px}
+.red-logo-blanco img{height:42px}
