@@ -10,3 +10,4 @@ colores:
   - { nombre: "Amarillo",        valor: "#F5D300" }
   - { nombre: "Celeste",         valor: "#A6E8FF" }
   - { nombre: "Azul",            valor: "#14B4E8" }
+  - { nombre: "Carmesí",         valor: "#CA2D4A" }
