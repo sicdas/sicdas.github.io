@@ -1,492 +1,592 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-
 <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VII SICDAS 2026 - Seminario Internacional de Ciencia de Datos Aplicada a la Sociedad</title>
+<meta name="description" content="VII Seminario Internacional de Ciencia de Datos Aplicada a la Sociedad (SICDAS), 27 de diciembre de 2026, modalidad virtual. Organizan el Grupo de Investigación ITDATA y la FISI de la UNMSM.">
+<meta property="og:title" content="VII SICDAS 2026">
+<meta property="og:description" content="VII Seminario Internacional de Ciencia de Datos Aplicada a la Sociedad. 27 de diciembre de 2026, Lima - Perú, modalidad virtual.">
+<meta property="og:url" content="https://www.sicdas.org/">
+<meta property="og:image" content="https://www.sicdas.org/assets/2026/images/hero-bg.jpg">
+<link rel="shortcut icon" href="assets/2026/images/favicon.png">
 
-    <!--====== Required meta tags ======-->
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="description" content="VI Seminario Internacional de Ciencia de Datos Aplicada a la Sociedad (SICDAS)">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;0,800&family=Source+Serif+4:ital@0;1&display=swap" rel="stylesheet">
 
-    <!--====== Title ======-->
-    <title>VI SICDAS - Seminario Internacional de Ciencia de Datos Aplicada a la Sociedad</title>
-
-    <!--====== Favicon Icon ======-->
-    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
-
-    <!--====== Bootstrap css ======-->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-
-    <!--====== Flaticon css ======-->
-    <link rel="stylesheet" href="assets/css/flaticon.css">
-
-    <!--====== Line Icons css ======-->
-    <link rel="stylesheet" href="assets/css/LineIcons.css">
-
-    <!--====== Animate css ======-->
-    <link rel="stylesheet" href="assets/css/animate.css">
-
-    <!--====== Slick css ======-->
-    <link rel="stylesheet" href="assets/css/slick.css">
-
-    <!--====== Default css ======-->
-    <link rel="stylesheet" href="assets/css/default.css">
-
-    <!--====== Style css ======-->
-    <link rel="stylesheet" href="assets/css/style.css">
-
+<style>
+body{margin:0;font-family:'Montserrat',sans-serif;color:#0C1633;background:#EEF3F5}
+a{color:#0C1633}a:hover{color:#1E3A6E}
+.serif{font-family:'Source Serif 4',Georgia,serif}
+.bar{position:absolute;display:block;z-index:4;pointer-events:none;animation:float 7s ease-in-out infinite alternate}
+@keyframes float{from{transform:translateY(36px);opacity:.45}to{transform:translateY(-36px);opacity:1}}
+.rise{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.d1{animation-delay:.05s}.d2{animation-delay:.25s}.d3{animation-delay:.4s}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.caret{display:inline-block;width:.5em;height:.9em;background:#A6D92A;vertical-align:-.1em;margin-left:.08em;animation:caret 1s steps(1) infinite}
+@keyframes caret{50%{opacity:0}}
+.ghost{transition:background-color .25s ease,color .25s ease}
+.ghost:hover{background-color:#FFFFFF;color:#0C1633 !important}
+.ghost-dark{transition:background-color .25s ease,color .25s ease}
+.ghost-dark:hover{background-color:#0C1633;color:#FFFFFF !important}
+.glow{animation:glow 2.6s ease-out infinite}
+@keyframes glow{0%{box-shadow:0 0 0 0 rgba(166,217,42,.55)}70%{box-shadow:0 0 0 16px rgba(166,217,42,0)}100%{box-shadow:0 0 0 0 rgba(166,217,42,0)}}
+.cdn{font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:clamp(32px,6vw,54px);line-height:1}
+.cdl{font-size:11px;font-weight:700;letter-spacing:2px;color:#8FA4C7}
+.edchip{display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 14px;border:1.5px solid #0C1633;font-size:11px;font-weight:700;letter-spacing:1.5px;color:#0C1633;text-decoration:none;transition:background-color .2s ease,color .2s ease}
+.edchip:hover{background-color:#0C1633;color:#FFFFFF}
+.vid{transition:transform .35s ease,opacity .35s ease}
+.vid:hover{transform:translateY(-8px);opacity:1 !important}
+.daycard{display:flex;flex-direction:column;gap:8px;padding:22px 20px;background:#FFFFFF;outline:1.5px dashed #C9D1DA;outline-offset:-1.5px}
+.ptabs{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.ptab{height:38px;padding:0 20px;border:2px solid #0C1633;background:#FFFFFF;color:#0C1633;font-size:11px;font-weight:700;letter-spacing:1.5px;cursor:pointer;transition:background-color .2s ease,color .2s ease}
+.ptab:hover{background:#0C1633;color:#FFFFFF}
+.ptab[aria-selected="true"]{background:#0C1633;color:#FFFFFF}
+.editions-gallery{margin-top:-80px}
+@media (max-width:767px){.editions-gallery{margin-top:-20px}}
+.pday{display:none;flex-direction:column;padding:6px 24px 18px}
+.pday.active{display:flex}
+.psec-label{font-size:11px;font-weight:700;letter-spacing:2px;color:#8296AB;margin:22px 0 4px}
+.ptimeline{display:flex;flex-direction:column}
+.prow{position:relative;display:grid;grid-template-columns:62px 20px 1fr;align-items:center;padding:16px 0;border-bottom:1px solid #E3E8ED}
+.prow:last-child{border-bottom:none}
+.prow-time{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;color:#0C1633}
+.prow-time small{display:block;font-size:10px;font-weight:400;color:#8296AB;margin-top:2px}
+.prow-marker{position:relative;height:100%;display:flex;align-items:center;justify-content:center}
+.prow-marker::before{content:'';position:absolute;top:-16px;bottom:-16px;left:50%;width:2px;background:#C9D1DA;transform:translateX(-50%)}
+.prow:first-child .prow-marker::before{top:50%}
+.prow:last-child .prow-marker::before{bottom:50%}
+.prow-dot{position:relative;z-index:1;width:9px;height:9px;flex:0 0 auto;transform:rotate(45deg);border:2px solid #8FA4C7;background:#EEF3F5}
+.prow-body{display:flex;align-items:center;gap:14px;padding-left:14px}
+.prow-avatar{flex:0 0 auto;width:44px;height:44px;border-radius:50%;overflow:hidden;background:#C9D1DA}
+.prow-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.prow-avatar.is-logo{background:#FFFFFF;padding:6px}
+.prow-avatar.is-logo img{object-fit:contain;filter:contrast(1.08)}
+.prow-text{display:flex;flex-direction:column;gap:2px}
+.prow-title{font-size:14px;font-weight:700;color:#0C1633;line-height:1.3}
+.prow-sub{font-size:12px;color:#6A7D93}
+.prow-topic{display:block;margin-top:3px;font-family:'Source Serif 4',Georgia,serif;font-size:12.5px;color:#1E3A6E}
+.prow.linked{cursor:pointer}
+.prow.linked:hover .prow-title,.prow.linked:focus-visible .prow-title{color:#1E3A6E}
+.prow.linked:focus-visible{outline:2px solid #A6D92A;outline-offset:-2px}
+.prow.is-taller.linked:hover .prow-title,.prow.is-taller.linked:focus-visible .prow-title{color:#A6D92A}
+.prow.is-break .prow-dot{border-color:#C9D1DA;background:#FFFFFF}
+.prow.is-break .prow-title{font-weight:500;color:#8296AB}
+.prow.is-break .prow-sub{color:#A9B6C4}
+.prow.is-taller{background:#0C1633;margin:0 -24px;padding:16px 24px;border-bottom-color:#16244A}
+.prow.is-taller .prow-dot{border-color:#A6D92A;background:#A6D92A}
+.prow.is-taller .prow-time{color:#FFFFFF}
+.prow.is-taller .prow-time small{color:#8FA4C7}
+.prow.is-taller .tlabel{display:block;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;letter-spacing:1.5px;color:#A6D92A}
+.prow.is-taller .prow-title{color:#FFFFFF}
+.prow.is-taller .prow-sub{color:#C9D5E3}
+.prow.is-taller .prow-body{flex-wrap:wrap}
+.prow-cta{margin-left:auto;flex:0 0 auto;height:34px;padding:0 18px;background:#A6D92A;color:#0C1633;font-size:11px;font-weight:700;letter-spacing:1.3px;border:none;text-decoration:none;display:inline-flex;align-items:center;cursor:pointer}
+@media (max-width:480px){.prow{grid-template-columns:52px 18px 1fr}.prow-time{font-size:11.5px}.prow-avatar{width:36px;height:36px}.prow.is-taller .prow-cta{margin-left:0;margin-top:8px}}
+@media (min-width:900px){.pday{padding:10px 40px 24px}.prow{grid-template-columns:78px 24px 1fr;padding:20px 0}.prow-marker::before{top:-20px;bottom:-20px}.prow:first-child .prow-marker::before{top:50%}.prow:last-child .prow-marker::before{bottom:50%}.prow-time{font-size:14px}.prow-time small{font-size:11px}.prow-avatar{width:52px;height:52px}.prow-body{gap:18px}.prow-title{font-size:15.5px}.prow-sub{font-size:13px}.psec-label{font-size:12px;margin:26px 0 6px}}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);grid-auto-rows:50vw}
+@media (min-width:700px){.pgrid{grid-template-columns:repeat(4,1fr);grid-auto-rows:25vw}}
+@media (min-width:1100px){.pgrid{grid-template-columns:repeat(6,1fr);grid-auto-rows:calc(100vw/6)}}
+.pcell{display:flex;flex-direction:column;justify-content:center;cursor:pointer}
+.pcell:focus-visible{outline:3px solid #A6D92A;outline-offset:-3px}
+.pcell-info{background:#0C1633;color:#FFFFFF;padding:18px 20px;transition:background-color .2s ease}
+.pcell-info:hover,.pcell-info:focus-visible{background:#16244A}
+.pcell-info .pname{font-size:15px;font-weight:700;line-height:1.25}
+.pcell-info .prole{display:block;margin-top:6px;font-size:10px;font-weight:700;letter-spacing:1.3px;color:#A6D92A;text-transform:uppercase}
+.pcell-photo{background:#C9D1DA;overflow:hidden;position:relative}
+.pcell-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(1.08);transition:transform .3s ease}
+.pcell-photo:hover img,.pcell-photo:focus-visible img{transform:scale(1.05)}
+dialog.pmodal{border:none;padding:0;width:calc(100% - 32px);max-width:540px;height:720px;max-height:calc(100vh - 48px);background:#FFFFFF;color:#0C1633;overflow:hidden;border-radius:18px;box-shadow:0 24px 60px rgba(12,22,51,.28)}
+dialog.pmodal::backdrop{background:rgba(12,22,51,.94)}
+dialog.pmodal .pm-grid{display:grid;width:100%;height:100%;max-height:calc(100vh - 48px);grid-template-columns:1fr;grid-template-rows:280px auto minmax(0,1fr);grid-template-areas:"photo" "link" "bio"}
+dialog.pmodal .pm-photowrap{grid-area:photo;position:relative;overflow:hidden;background:#0C1633}
+dialog.pmodal .pm-photo{width:100%;height:100%;object-fit:cover;object-position:center 20%;filter:contrast(1.08) brightness(1.02);display:block}
+dialog.pmodal .pm-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,22,51,0) 42%,rgba(12,22,51,.94) 100%)}
+dialog.pmodal .pm-caption{display:none}
+dialog.pmodal .pm-lime-edge{display:none}
+dialog.pmodal .pm-head{grid-area:photo;align-self:end;position:relative;z-index:2;padding:0 20px 16px}
+dialog.pmodal .pm-name{margin:0;font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:23px;font-weight:600;line-height:1.25;color:#FFFFFF}
+dialog.pmodal .pm-role{display:block;margin-top:4px;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.8px;color:#A6D92A;text-transform:uppercase}
+dialog.pmodal .pm-rule{display:none}
+dialog.pmodal .pm-linkedin{grid-area:link;display:inline-flex;align-items:center;gap:7px;margin:16px 20px 0;padding:9px 14px;border-radius:20px;background:rgba(10,102,194,.08);font-size:12.5px;font-weight:700;color:#0A66C2;text-decoration:none;justify-self:start}
+dialog.pmodal .pm-linkedin:hover{background:rgba(10,102,194,.14)}
+dialog.pmodal .pm-linkedin svg{width:14px;height:14px;flex-shrink:0}
+dialog.pmodal .pm-bio{grid-area:bio;overflow-y:auto;min-height:0;padding:16px 22px 24px;font-size:15.5px;line-height:1.75;color:#33475E;overflow-wrap:break-word}
+dialog.pmodal .pm-bio p{margin:0 0 12px}
+dialog.pmodal .pm-bio p:last-child{margin-bottom:0}
+dialog.pmodal .pm-close{position:absolute;top:12px;right:12px;z-index:5;width:40px;height:40px;border-radius:50%;border:none;background:rgba(12,22,51,.38);color:#FFFFFF;display:flex;align-items:center;justify-content:center;cursor:pointer}
+dialog.pmodal .pm-close:hover{background:rgba(12,22,51,.55)}
+dialog.pmodal .pm-close svg{width:15px;height:15px}
+@media (min-width:641px){
+dialog.pmodal{max-width:820px;border-radius:0}
+dialog.pmodal .pm-grid{grid-template-columns:340px 1fr;grid-template-rows:auto auto auto minmax(0,1fr);grid-template-areas:"photo head" "photo rule" "photo link" "photo bio"}
+dialog.pmodal .pm-scrim{inset:auto 0 0 0;height:160px;background:linear-gradient(180deg,rgba(12,22,51,0) 0%,rgba(12,22,51,.92) 100%)}
+dialog.pmodal .pm-caption{display:block;position:absolute;left:24px;right:24px;bottom:24px;z-index:1;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.5px}
+dialog.pmodal .pm-caption span{display:block}
+dialog.pmodal .pm-caption span:first-child{color:#A6D92A}
+dialog.pmodal .pm-caption span:last-child{color:#C9D5E3;margin-top:4px}
+dialog.pmodal .pm-lime-edge{display:block;position:absolute;left:0;right:0;bottom:0;height:6px;background:#A6D92A}
+dialog.pmodal .pm-head{grid-area:head;align-self:auto;padding:48px 44px 0}
+dialog.pmodal .pm-name{font-size:31px;color:#0C1633}
+dialog.pmodal .pm-role{color:#1E3A6E;font-size:12px;letter-spacing:1.4px}
+dialog.pmodal .pm-rule{display:block;grid-area:rule;width:40px;height:3px;background:#A6D92A;margin:18px 44px 0}
+dialog.pmodal .pm-linkedin{margin:18px 44px 0;padding:0;border-radius:0;background:none;font-size:13px}
+dialog.pmodal .pm-linkedin:hover{background:none;text-decoration:underline}
+dialog.pmodal .pm-linkedin svg{width:15px;height:15px}
+dialog.pmodal .pm-bio{padding:20px 44px 40px;font-size:15.5px}
+dialog.pmodal .pm-close{top:16px;right:16px;width:32px;height:32px;background:rgba(12,22,51,.07);color:#0C1633}
+dialog.pmodal .pm-close:hover{background:rgba(12,22,51,.14)}
+}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none !important;transition:none !important}}
+</style>
 </head>
-
 <body>
+<div style="display:flex;flex-direction:column;background:#EEF3F5;overflow:hidden">
 
-    <!--====== PRELOADER PART START ======-->
+<!-- HERO + COUNTDOWN -->
+<section id="inicio" style="position:relative;min-height:100vh;min-height:100svh;background:#0C1633;clip-path:polygon(0 0,100% 0,100% 92%,50% 100%,0 92%);overflow:hidden;display:flex;flex-direction:column">
+<img src="assets/2026/images/hero-bg.jpg" alt="" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.1);opacity:.28">
+<span class="bar" aria-hidden="true" style="left:5%;top:90px;width:10px;height:150px;background:#A6D92A;animation-duration:6s"></span>
+<span class="bar" aria-hidden="true" style="left:9%;top:0;width:8px;height:110px;background:#FFFFFF;animation-duration:8s;animation-delay:-2s"></span>
+<span class="bar" aria-hidden="true" style="left:15%;top:330px;width:8px;height:120px;background:#FFFFFF;animation-duration:7s;animation-delay:-4s"></span>
+<span class="bar" aria-hidden="true" style="left:23%;top:170px;width:10px;height:90px;background:#A6D92A;animation-duration:9s;animation-delay:-1s"></span>
+<span class="bar" aria-hidden="true" style="left:74%;top:360px;width:10px;height:170px;background:#A6D92A;animation-duration:7.5s;animation-delay:-5s"></span>
+<span class="bar" aria-hidden="true" style="left:81%;top:120px;width:8px;height:90px;background:#FFFFFF;animation-duration:6s;animation-delay:-2.5s"></span>
+<span class="bar" aria-hidden="true" style="left:90%;top:60px;width:8px;height:140px;background:#FFFFFF;animation-duration:8.5s;animation-delay:-1.5s"></span>
+<span class="bar" aria-hidden="true" style="left:96%;top:300px;width:10px;height:120px;background:#A6D92A;animation-duration:7s;animation-delay:-6s"></span>
 
-    <div class="preloader">
-        <div class="loader">
-            <div class="ytp-spinner">
-                <div class="ytp-spinner-container">
-                    <div class="ytp-spinner-rotator">
-                        <div class="ytp-spinner-left">
-                            <div class="ytp-spinner-circle"></div>
-                        </div>
-                        <div class="ytp-spinner-right">
-                            <div class="ytp-spinner-circle"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<nav aria-label="Principal" style="position:relative;z-index:5;min-height:70px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:24px;padding:14px 16px;font-size:11px;font-weight:700;letter-spacing:1.5px">
+<a href="#sobre" style="color:#FFFFFF;text-decoration:none">EL EVENTO</a>
+<a href="#ponentes" style="color:#FFFFFF;text-decoration:none">PONENTES</a>
+<a href="#programa" style="color:#FFFFFF;text-decoration:none">PROGRAMA</a>
+<a href="#organizan" style="color:#FFFFFF;text-decoration:none">ORGANIZAN</a>
+<a href="#modalidad" style="color:#FFFFFF;text-decoration:none">MODALIDAD</a>
+<a href="#contacto" style="color:#FFFFFF;text-decoration:none">CONTACTO</a>
+<a href="#ediciones" style="color:#FFFFFF;text-decoration:none">EDICIONES ANTERIORES</a>
+<!-- TODO: cuando se abra el registro, cambiar href="#contacto" por el enlace del formulario de inscripción 2026 -->
+<a href="#contacto" style="color:#A6D92A;text-decoration:none">INSCRIPCIONES</a>
+</nav>
 
-    <!--====== PRELOADER PART ENDS ======-->
+<div style="position:relative;z-index:5;flex-grow:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:40px;padding:40px 16px 60px;text-align:center">
+<div class="rise d1" style="display:flex;flex-direction:column;align-items:center;gap:14px">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:16px;color:#8FA4C7">~/lima $ ./sicdas --edicion 7 --modalidad virtual</span>
+<h1 style="margin:0;font-size:clamp(34px,6vw,64px);line-height:1.05;font-weight:800;color:#FFFFFF;letter-spacing:1px"><span style="font-weight:300;color:#A6D92A">&lt;</span>VII SICDAS<span style="font-weight:300;color:#A6D92A">/&gt;</span><span class="caret" aria-hidden="true"></span></h1>
+<span style="max-width:640px;font-size:clamp(15px,2.4vw,20px);font-weight:500;color:#FFFFFF;line-height:1.4">Seminario Internacional de Ciencia de Datos Aplicada a la Sociedad</span>
+<span style="font-size:22px;font-weight:500;color:#A6D92A;letter-spacing:1px">27 DICIEMBRE 2026 · LIMA – PERÚ</span>
+<span style="font-size:12px;font-weight:700;color:#FFFFFF;letter-spacing:2px">MODALIDAD VIRTUAL · ORGANIZAN ITDATA · FISI · UNMSM</span>
+</div>
 
-    <!--====== HEADER PART START ======-->
+<div class="rise d2" style="display:flex;flex-direction:column;align-items:center;gap:10px">
+<span class="cdl">GUARDA LA FECHA — FALTAN</span>
+<div id="countdown" role="timer" aria-live="polite" style="display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(14px,5vw,28px);color:#FFFFFF"></div>
+<span id="countdown-note" class="serif" style="font-size:13px;color:#C9D5E3;max-width:420px"></span>
+</div>
 
-    <header class="header-area">
-        <div class="navbar-area navbar-two">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <nav class="navbar navbar-expand-lg">
-                            <a class="navbar-brand" href="#home">
-                                <!-- Puedes cambiar este logo por el de SICDAS -->
-                                <img src="assets/images/logo.png" alt="SICDAS">
-                            </a>
+<div class="rise d3" style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px">
+<!-- TODO: cuando se abra el registro, cambiar href y texto por "INSCRÍBETE AQUÍ" -->
+<a href="#contacto" class="ghost glow" style="display:inline-flex;align-items:center;height:50px;padding:0 30px;border:2px solid #A6D92A;background:#A6D92A;color:#0C1633;font-size:14px;font-weight:700;letter-spacing:2px;text-decoration:none">INSCRIPCIONES PRÓXIMAMENTE</a>
+<a href="#programa" class="ghost" style="display:inline-flex;align-items:center;height:50px;padding:0 30px;border:2px solid #FFFFFF;color:#FFFFFF;font-size:14px;font-weight:700;letter-spacing:2px;text-decoration:none">VER PROGRAMA</a>
+</div>
+</div>
+</section>
 
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTwo" aria-controls="navbarTwo" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="toggler-icon"></span>
-                                <span class="toggler-icon"></span>
-                                <span class="toggler-icon"></span>
-                            </button>
+<!-- ZONA CLARA CON MARCO -->
+<div style="position:relative;display:flex;flex-direction:column;border-left:6px solid #A6D92A;border-right:6px solid #A6D92A">
 
-                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarTwo">
-                                <ul class="navbar-nav m-auto">
-                                    <li class="nav-item active">
-                                        <a class="page-scroll" href="#home">Inicio</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="page-scroll" href="#about">Sobre el evento</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="page-scroll" href="#programa">Programación</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="page-scroll" href="#client">Organizan</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="page-scroll" href="#contact">Contacto</a>
-                                    </li>
-                                </ul>
-                            </div>
+<!-- GALERÍA: afiches de ediciones anteriores -->
+<section aria-label="Ediciones anteriores" class="editions-gallery" style="position:relative;z-index:3;display:flex;flex-wrap:wrap;justify-content:center;gap:22px;align-items:flex-start;padding:0 16px">
+<figure class="vid" style="margin:0;width:min(360px,100%);opacity:.55;display:flex;flex-direction:column;gap:8px">
+<a href="past-events/2024/index.html" style="display:block;position:relative;height:min(230px,56vw);background:#8FA4C7;overflow:hidden">
+<img src="assets/2026/images/afiche-2024.jpeg" alt="Afiche del V SICDAS 2024" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block">
+</a>
+<figcaption class="serif" style="font-size:12px;line-height:1.5;color:#4A5B70">V SICDAS, edición 2024.</figcaption>
+</figure>
+<figure class="vid" style="margin:0;width:min(540px,100%);display:flex;flex-direction:column;gap:8px">
+<a href="past-events/2025/index.html" style="display:block;position:relative;height:min(310px,56vw);background:#A6D92A;overflow:hidden">
+<img src="assets/2026/images/afiche-2025.jpeg" alt="Afiche del VI SICDAS 2025" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block">
+</a>
+<figcaption class="serif" style="font-size:12px;line-height:1.5;color:#4A5B70">VI SICDAS, edición 2025: 29 de diciembre, transmisión virtual.</figcaption>
+</figure>
+<figure class="vid" style="margin:0;width:min(360px,100%);opacity:.55;display:flex;flex-direction:column;gap:8px">
+<a href="past-events/2023/index.html" style="display:block;position:relative;height:min(230px,56vw);background:#8FA4C7;overflow:hidden">
+<img src="assets/2026/images/afiche-2023.jpeg" alt="Afiche del IV SICDAS 2023" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block">
+</a>
+<figcaption class="serif" style="font-size:12px;line-height:1.5;color:#4A5B70">IV SICDAS, edición 2023.</figcaption>
+</figure>
+</section>
 
-                            <div class="navbar-btn d-none d-sm-inline-block">
-                                <a class="main-btn" href="https://forms.gle/RdENwkxnt5mSod1Y8" target="_blank">Regístrate</a>
-                            </div>
-                        </nav> <!-- navbar -->
-                    </div>
-                </div> <!-- row -->
-            </div> <!-- container -->
-        </div>
+<!-- SOBRE -->
+<section id="sobre" style="padding:100px 16px 90px;display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center">
+<h2 style="margin:0;font-size:30px;font-weight:500;letter-spacing:2px">SOBRE EL VII SICDAS</h2>
+<span aria-hidden="true" style="width:150px;height:3px;background:#A6D92A;margin-top:-8px"></span>
+<p class="serif" style="margin:0;max-width:620px;font-size:16px;line-height:1.7;color:#33475E">El Grupo de Investigación ITDATA, el Decanato, el Vicedecanato Académico y el Instituto de Investigación de la Facultad de Ingeniería de Sistemas e Informática (FISI) de la Universidad Nacional Mayor de San Marcos (UNMSM) se complacen en presentar la organización del VII Seminario Internacional de Ciencia de Datos Aplicada a la Sociedad (SICDAS).</p>
+<p class="serif" style="margin:0;max-width:560px;font-size:14px;line-height:1.7;color:#4A5B70">Su propósito es fomentar y fortalecer el intercambio de experiencias académicas e investigativas entre profesionales y estudiantes de Ingeniería de Sistemas, Ingeniería de Software, Computación e Informática, así como con todos los participantes interesados.</p>
+<p class="serif" style="margin:0;max-width:560px;font-size:14px;line-height:1.7;color:#4A5B70">El SICDAS aborda Big Data Analytics, Machine Learning, Data Mining, Business Intelligence, Data Science, Open Data, Gobierno de Datos y Deep Learning, con enfoque en su aplicación a los desafíos sociales. Habrá conferencias, una mesa redonda, intercambio de ideas y experiencias, y certificados para los interesados.</p>
 
-        <div id="home" class="header-content-area bg_cover d-flex align-items-center" style="background-image: url(assets/images/header-bg.jpg)">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <!-- Countdown con fecha del evento -->
-                        <div data-countdown="2025/12/29"></div>
+<div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:44px;margin-top:10px">
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:36px;font-weight:300">7</span><span style="font-size:11px;font-weight:700;letter-spacing:2px;color:#4A5B70">EDICIONES</span></div>
+<span aria-hidden="true" style="width:1px;height:44px;background:#C9D1DA"></span>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:36px;font-weight:300">10</span><span style="font-size:11px;font-weight:700;letter-spacing:2px;color:#4A5B70">HORAS</span></div>
+<span aria-hidden="true" style="width:1px;height:44px;background:#C9D1DA"></span>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:36px;font-weight:300">100%</span><span style="font-size:11px;font-weight:700;letter-spacing:2px;color:#4A5B70">VIRTUAL</span></div>
+</div>
+<div id="ediciones" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;margin-top:4px">
+<span class="cdl" style="color:#4A5B70">EDICIONES ANTERIORES</span>
+<div id="editions-grid" style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px"></div>
+</div>
+</section>
+</div>
 
-                        <div class="header-content text-center">
-                            <!-- Si tienes un banner de SICDAS, puedes usarlo aquí -->
-                            <!-- <img src="assets/images/logo-sicdas-2025.png" alt="SICDAS" class="img-fluid mb-4"> -->
+<!-- PONENTES (temporal: reemplazar por los ponentes confirmados) -->
+<div id="ponentes" style="position:relative;display:flex;flex-direction:column;border-left:6px solid #A6D92A;border-right:6px solid #A6D92A">
+<div style="max-width:640px;width:100%;margin:0 auto;background:#FFFFFF;border-radius:24px 24px 0 0;padding:64px 32px 48px;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center">
+<h2 style="margin:0;font-size:30px;font-weight:500;letter-spacing:2px">PONENTES</h2>
+<span aria-hidden="true" style="width:150px;height:3px;background:#A6D92A;margin-top:-8px"></span>
+<p class="serif" style="margin:0;max-width:460px;font-size:15px;line-height:1.7;color:#4A5B70">Investigadores y profesionales nacionales e internacionales compartirán experiencias y aplicaciones reales de la ciencia de datos frente a los desafíos sociales. Pronto anunciaremos a los ponentes confirmados.</p>
+</div>
+<div class="pgrid" id="ponentes-grid"></div>
+</div>
 
-                            <h3 class="sub-title">VI Seminario Internacional Ciencia de Datos Aplicada a la Sociedad (SICDAS)</h3>
-                            <h4 style="color: white;">29 de diciembre 2025, Lima - Perú<br>Modalidad Virtual</h4>
+<!-- PROGRAMA + ORGANIZAN -->
+<div style="position:relative;display:flex;flex-direction:column;border-left:6px solid #A6D92A;border-right:6px solid #A6D92A">
+<section id="programa" style="padding:100px 16px;display:flex;flex-direction:column;align-items:center;gap:30px">
+<div style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center">
+<h2 style="margin:0;font-size:30px;font-weight:500;letter-spacing:2px">PROGRAMA</h2>
+<span aria-hidden="true" style="width:150px;height:3px;background:#A6D92A;margin-top:-6px"></span>
+<p class="serif" style="margin:0;max-width:520px;font-size:15px;line-height:1.7;color:#4A5B70">Programa tentativo del domingo 27 de diciembre de 2026, de 12:00 a 22:00 (hora de Perú, GMT-5). Los temas y horarios se confirmarán más adelante.</p>
+</div>
+<div class="ptabs" role="tablist" aria-label="Día del programa">
+<button type="button" class="ptab" role="tab" data-day="dom" aria-selected="true">DOM 27 DIC</button>
+</div>
+<div style="width:min(920px,100%);background:#FFFFFF;outline:1.5px dashed #C9D1DA;outline-offset:-1.5px">
+<div class="pday active" data-day="dom"></div>
+</div>
+</section>
 
-                            <ul class="header-btn">
+<!-- ORGANIZAN -->
+<section id="organizan" style="padding:10px 16px 100px;display:flex;flex-direction:column;align-items:center;gap:40px;text-align:center">
+<div style="display:flex;flex-direction:column;align-items:center;gap:14px">
+<h2 style="margin:0;font-size:30px;font-weight:500;letter-spacing:2px">ORGANIZAN</h2>
+<span aria-hidden="true" style="width:150px;height:3px;background:#A6D92A;margin-top:-6px"></span>
+<p class="serif" style="margin:0;max-width:560px;font-size:15px;line-height:1.7;color:#4A5B70">Grupo de Investigación ITDATA, Decanato, Vicedecanato Académico e Instituto de Investigación de la Facultad de Ingeniería de Sistemas e Informática (FISI) de la Universidad Nacional Mayor de San Marcos.</p>
+</div>
+<div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:60px">
+<a href="https://itdataperu.net/" target="_blank" rel="noopener"><img src="assets/2026/images/logo-itdata.jpeg" alt="Grupo de Investigación ITDATA" style="height:110px;max-width:320px;object-fit:contain"></a>
+<a href="https://sistemas.unmsm.edu.pe/" target="_blank" rel="noopener"><img src="assets/2026/images/logo-fisi-unmsm.png" alt="Facultad de Ingeniería de Sistemas e Informática - UNMSM" style="height:110px;max-width:320px;object-fit:contain"></a>
+</div>
+<span class="serif" style="font-size:14px;color:#4A5B70">ITDATA · FISI · Universidad Nacional Mayor de San Marcos</span>
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:20px">
+<a href="mailto:nromanc@unmsm.edu.pe?subject=VII%20SICDAS%202026" class="ghost-dark" style="display:inline-flex;align-items:center;height:50px;padding:0 28px;border:2px solid #0C1633;color:#0C1633;font-size:13px;font-weight:700;letter-spacing:1.5px;text-decoration:none">ESCRÍBENOS</a>
+</div>
+</section>
+</div>
 
-                                 <li>
-                                    <a class="main-btn main-btn-2" href="https://us06web.zoom.us/j/84930759107?pwd=vqm2tDyklJFyTKGNZkezLOAW14643W.1" target="_blank">NEW! Acceso a las conferencias</a>
-                                </li>
-                                <br>
+<!-- MODALIDAD / SEDE -->
+<section id="modalidad" style="position:relative;min-height:600px;background:#0C1633;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;color:#FFFFFF;padding:60px 16px">
+<img src="assets/2026/images/hero-bg.jpg" alt="" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.1);opacity:.26">
+<span class="bar" aria-hidden="true" style="left:8%;top:120px;width:10px;height:120px;background:#A6D92A;animation-duration:8s;animation-delay:-3s"></span>
+<span class="bar" aria-hidden="true" style="left:30%;top:360px;width:8px;height:90px;background:#FFFFFF;animation-duration:6s;animation-delay:-1s"></span>
+<span class="bar" aria-hidden="true" style="left:70%;top:300px;width:10px;height:140px;background:#A6D92A;animation-duration:7.5s;animation-delay:-4s"></span>
+<span class="bar" aria-hidden="true" style="left:90%;top:90px;width:8px;height:100px;background:#FFFFFF;animation-duration:7s;animation-delay:-1.5s"></span>
+<span style="position:relative;z-index:5;font-size:22px;font-weight:500;letter-spacing:1px">27 DE DICIEMBRE, 2026 · 12:00 – 22:00</span>
+<h2 style="position:relative;z-index:5;margin:0;font-size:clamp(32px,6vw,64px);font-weight:800;line-height:1.05;letter-spacing:1px">MODALIDAD VIRTUAL</h2>
+<span style="position:relative;z-index:5;font-size:clamp(16px,3vw,22px);font-weight:400">Transmisión por Google Meet y YouTube desde la FISI - UNMSM, Lima</span>
+<span style="position:relative;z-index:5;margin-top:18px;font-size:13px;font-weight:500;color:#C9D5E3;max-width:460px">Los enlaces de acceso se publicarán en esta página y se enviarán a los inscritos antes del evento.</span>
+<a href="#contacto" class="ghost glow" style="position:relative;z-index:5;margin-top:10px;display:inline-flex;align-items:center;height:50px;padding:0 30px;border:2px solid #FFFFFF;color:#FFFFFF;font-size:14px;font-weight:700;letter-spacing:2px;text-decoration:none">INSCRIPCIONES PRÓXIMAMENTE</a>
+</section>
 
-                                 <li>
-                                    <a class="main-btn main-btn-2" href="assets/programa/PROGRAMA-VI-SICDAS-DOC.pdf" >Ver programación</a>
-                                </li>
+<!-- PREGUNTAS Y CONTACTO -->
+<div style="position:relative;display:flex;flex-direction:column;border-left:6px solid #A6D92A;border-right:6px solid #A6D92A">
+<section id="faq" style="padding:90px 16px 40px;display:flex;flex-direction:column;align-items:center;gap:30px;text-align:center">
+<div style="display:flex;flex-direction:column;align-items:center;gap:14px">
+<h2 style="margin:0;font-size:30px;font-weight:500;letter-spacing:2px">PREGUNTAS</h2>
+<span aria-hidden="true" style="width:150px;height:3px;background:#A6D92A;margin-top:-6px"></span>
+</div>
+<div style="width:min(900px,100%);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:30px 60px;text-align:left">
+<div style="display:flex;flex-direction:column;gap:6px"><h3 style="margin:0;font-size:13px;font-weight:700;letter-spacing:1px">¿QUIÉNES PUEDEN PARTICIPAR?</h3><p class="serif" style="margin:0;font-size:15px;line-height:1.6;color:#4A5B70">Profesionales y estudiantes de Ingeniería de Sistemas, Ingeniería de Software, Computación e Informática, y todas las personas interesadas en la ciencia de datos.</p></div>
+<div style="display:flex;flex-direction:column;gap:6px"><h3 style="margin:0;font-size:13px;font-weight:700;letter-spacing:1px">¿CÓMO ME CONECTO?</h3><p class="serif" style="margin:0;font-size:15px;line-height:1.6;color:#4A5B70">El evento es virtual. Publicaremos el enlace de Google Meet y la retransmisión en YouTube antes del 27 de diciembre.</p></div>
+<div style="display:flex;flex-direction:column;gap:6px"><h3 style="margin:0;font-size:13px;font-weight:700;letter-spacing:1px">¿ENTREGAN CERTIFICADO?</h3><p class="serif" style="margin:0;font-size:15px;line-height:1.6;color:#4A5B70">Sí. Se otorgarán certificados a los interesados que completen el registro para certificado.</p></div>
+<div style="display:flex;flex-direction:column;gap:6px"><h3 style="margin:0;font-size:13px;font-weight:700;letter-spacing:1px">¿CUÁNDO ABRE LA INSCRIPCIÓN?</h3><p class="serif" style="margin:0;font-size:15px;line-height:1.6;color:#4A5B70">Muy pronto. Síguenos en redes sociales para enterarte cuando se abra el formulario.</p></div>
+</div>
+</section>
 
-                                <li>
-                                    <a class="main-btn main-btn-2" href="https://forms.gle/RdENwkxnt5mSod1Y8" target="_blank">Regístrate</a>
-                                </li>
-                                <li>
-                                    <a class="main-btn" href="https://forms.gle/Ey9aNBhpkSHMW5888" target="_blank">Registro para certificado</a>
-                                </li>
-                               
+<section id="contacto" style="padding:40px 16px 100px;display:flex;flex-direction:column;align-items:center;gap:30px;text-align:center">
+<div style="display:flex;flex-direction:column;align-items:center;gap:14px">
+<h2 style="margin:0;font-size:30px;font-weight:500;letter-spacing:2px">CONTACTO</h2>
+<span aria-hidden="true" style="width:150px;height:3px;background:#A6D92A;margin-top:-6px"></span>
+</div>
+<div style="width:min(900px,100%);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:16px;text-align:left">
+<div class="daycard"><span class="cdl">COORDINADOR ITDATA</span><span style="font-size:15px;font-weight:700">Prof. Ulises Román C.</span></div>
+<div class="daycard"><span class="cdl">CORREO</span><a href="mailto:nromanc@unmsm.edu.pe" style="font-size:15px;font-weight:700;text-decoration:none">nromanc@unmsm.edu.pe</a></div>
+<div class="daycard"><span class="cdl">TELÉFONO</span><a href="tel:+51938345776" style="font-size:15px;font-weight:700;text-decoration:none">+51 938 345 776</a></div>
+<div class="daycard"><span class="cdl">DIRECCIÓN</span><span style="font-size:15px;font-weight:700">FISI - UNMSM, Calle Germán Amézaga s/n, Lima - Perú</span></div>
+</div>
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px">
+<a class="edchip" href="https://www.facebook.com/SICDAS" target="_blank" rel="noopener">FACEBOOK →</a>
+<a class="edchip" href="https://www.linkedin.com/company/sicdas/" target="_blank" rel="noopener">LINKEDIN →</a>
+<a class="edchip" href="https://sistemas.unmsm.edu.pe/" target="_blank" rel="noopener">SITIO DE LA FISI →</a>
+<a class="edchip" href="https://itdataperu.net/" target="_blank" rel="noopener">ITDATA →</a>
+</div>
+</section>
+</div>
 
-                            </ul>
+<!-- PIE -->
+<footer style="background:#0C1633;display:flex;flex-direction:column">
+<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:56px 24px;text-align:center">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#8FA4C7">~/lima $ ./sicdas --guardar-fecha</span>
+<span style="font-size:clamp(22px,4vw,36px);font-weight:800;color:#FFFFFF;letter-spacing:1px">NOS VEMOS EL 27 DE DICIEMBRE<span class="caret" aria-hidden="true"></span></span>
+</div>
+<div style="flex-wrap:wrap;gap:16px;padding:20px 24px;border-top:1px solid #22335A;display:flex;align-items:center;justify-content:space-between">
+<div style="display:flex;align-items:center;gap:10px">
+<img src="assets/2026/images/favicon.png" alt="" style="width:28px;height:28px;object-fit:contain">
+<span style="font-size:12px;font-weight:700;letter-spacing:1.5px;color:#A6D92A">SICDAS · ITDATA · FISI · UNMSM</span>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:20px;font-size:10px;font-weight:700;letter-spacing:1.5px">
+<a href="mailto:nromanc@unmsm.edu.pe" style="color:#FFFFFF;text-decoration:none">NROMANC@UNMSM.EDU.PE</a>
+<span style="color:#FFFFFF">+51 938 345 776</span>
+<a href="https://www.facebook.com/SICDAS" target="_blank" rel="noopener" style="color:#FFFFFF;text-decoration:none">FACEBOOK</a>
+<a href="https://www.linkedin.com/company/sicdas/" target="_blank" rel="noopener" style="color:#FFFFFF;text-decoration:none">LINKEDIN</a>
+<a href="#ediciones" style="color:#FFFFFF;text-decoration:none">EDICIONES ANTERIORES</a>
+</div>
+</div>
+</footer>
 
-                            <!-- ul class="header-btn" style="margin-top: 20px;">
-                                <li><a class="main-btn" href="https://meet.google.com/yxi-romw-wtw?authuser=1" target="_blank">Acceder a las conferencias</a></li>
-                                <li><a class="main-btn main-btn-2" href="https://www.youtube.com/live/IduEZpR4Gbg" target="_blank">Retransmisión en YouTube</a></li>
-                            </ul -->
-                        </div>  <!-- header content -->
-                    </div>
-                </div> <!-- row -->
-            </div> <!-- container -->
-        </div> <!-- header content -->
-    </header>
+</div>
 
-    <!--====== HEADER PART ENDS ======-->
-    
-    <!--====== ABOUT PART START ======-->
+<script>
+(function(){
+  // Ediciones archivadas, más reciente primero. Al archivar una edición,
+  // mover su sitio a past-events/<año>/ y agregar una entrada aquí.
+  var EDITIONS = [
+    { year: '2025', href: 'past-events/2025/index.html' },
+    { year: '2024', href: 'past-events/2024/index.html' },
+    { year: '2023', href: 'past-events/2023/index.html' }
+  ];
+  var grid = document.getElementById('editions-grid');
+  grid.innerHTML = EDITIONS.map(function(e){
+    return '<a class="edchip" href="'+e.href+'">'+e.year+' →</a>';
+  }).join('');
+})();
 
-    <section id="about" class="about-area pb-130 pt-80">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="about-image mt-50 wow fadeInLeft" data-wow-duration="1s">
-                        <!-- Puedes reutilizar el banner del SICDAS -->
-                        <img src="assets/images/about-sicdas.jpeg" alt="Sobre el SICDAS" class="img-fluid">
-                    </div> <!-- about image -->
-                </div>
-                <div class="col-lg-6">
-                    <div class="about-content mt-45 wow fadeInRight" data-wow-duration="1s">
-                        <div class="section-title">
-                            <h2 class="title">Sobre el VI SICDAS</h2>
-                        </div> <!-- section title -->
+(function(){
+  // Un día de evento: 27 de diciembre de 2026, 12:00 a 22:00 (hora Perú, GMT-5)
+  var start = new Date("2026-12-27T12:00:00-05:00").getTime();
+  var end = new Date("2026-12-27T22:00:00-05:00").getTime();
+  var box = document.getElementById('countdown');
+  var note = document.getElementById('countdown-note');
+  var units = [
+    { id: 'd', label: 'DÍAS' },
+    { id: 'h', label: 'HORAS' },
+    { id: 'm', label: 'MIN' },
+    { id: 's', label: 'SEG' }
+  ];
+  units.forEach(function(u){
+    var wrap = document.createElement('div');
+    wrap.style.cssText = 'display:flex;flex-direction:column;align-items:center;gap:4px';
+    wrap.innerHTML = '<span class="cdn" id="cd-'+u.id+'">00</span><span class="cdl">'+u.label+'</span>';
+    box.appendChild(wrap);
+  });
+  function pad(n){ return n < 10 ? '0'+n : ''+n; }
+  var timer;
+  function tick(){
+    var now = Date.now();
+    if (now >= start && now <= end) {
+      box.style.display = 'none';
+      note.textContent = '¡El VII SICDAS está en curso! Hoy, de 12:00 a 22:00, en modalidad virtual.';
+      return;
+    }
+    if (now > end) {
+      box.style.display = 'none';
+      note.textContent = 'Esta edición ya terminó. Gracias por acompañarnos, nos vemos en la próxima.';
+      clearInterval(timer);
+      return;
+    }
+    var diff = Math.max(0, start - now);
+    var s = Math.floor(diff / 1000);
+    var d = Math.floor(s / 86400); s -= d * 86400;
+    var h = Math.floor(s / 3600); s -= h * 3600;
+    var m = Math.floor(s / 60); s -= m * 60;
+    document.getElementById('cd-d').textContent = pad(d);
+    document.getElementById('cd-h').textContent = pad(h);
+    document.getElementById('cd-m').textContent = pad(m);
+    document.getElementById('cd-s').textContent = pad(s);
+    note.textContent = 'Domingo 27 de diciembre de 2026, de 12:00 a 22:00 (hora de Perú), modalidad virtual.';
+  }
+  tick();
+  timer = setInterval(tick, 1000);
+})();
+</script>
+<dialog id="ponente-modal" class="pmodal">
+<button type="button" class="pm-close" aria-label="Cerrar"><svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 1L13 13M13 1L1 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+<div class="pm-grid">
+<div class="pm-photowrap">
+<img class="pm-photo" src="" alt="">
+<div class="pm-scrim" aria-hidden="true"></div>
+<div class="pm-caption" aria-hidden="true"><span>VII SICDAS 2026</span><span>Ponente</span></div>
+<div class="pm-lime-edge" aria-hidden="true"></div>
+</div>
+<div class="pm-head">
+<h3 class="pm-name"></h3>
+<span class="pm-role"></span>
+</div>
+<div class="pm-rule" aria-hidden="true"></div>
+<a class="pm-linkedin" href="" target="_blank" rel="noopener noreferrer" style="display:none"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>LinkedIn</a>
+<div class="pm-bio"></div>
+</div>
+</dialog>
+<script>
+(function(){
+  // PONENTES TEMPORALES. Al confirmar un ponente, reemplazar name, role, inst,
+  // photo (p. ej. assets/2026/images/ponentes/apellido.jpg), linkedin, topic y bio.
+  var GENERIC_PHOTO = 'assets/2026/images/ponente-generico.svg';
+  var GENERIC_BIO = ['Biografía por confirmar. La publicaremos cuando el comité organizador confirme la participación del ponente.'];
+  var AREAS = ['Big Data Analytics', 'Machine Learning', 'Data Mining', 'Business Intelligence', 'Data Science',
+               'Open Data', 'Gobierno de Datos', 'Deep Learning', 'Ciencia de Datos y Sociedad'];
+  var PONENTES = AREAS.map(function(area, i){
+    return {
+      name: 'Ponente por confirmar',
+      role: i === AREAS.length - 1 ? 'Conferencia magistral' : 'Conferencista',
+      inst: 'Institución por confirmar',
+      photo: GENERIC_PHOTO,
+      linkedin: '',
+      topic: 'Conferencia: ' + area + ' (tema por confirmar)',
+      area: area,
+      bio: GENERIC_BIO
+    };
+  });
 
-                        <p class="text mt-30">
-                            El Grupo de Investigación ITDATA, Decanato, Vicedecanato Académico e Instituto de Investigación de la Facultad de Ingeniería de Sistemas e Informática (FISI) de la Universidad Nacional Mayor de San Marcos (UNMSM) se complace en presentar la organización del VI Seminario Internacional de Ciencias de Datos Aplicada a la Sociedad (SICDAS).
-                        </p>
-                        <p class="text mt-15">
-                            Con el propósito de fomentar y fortalecer el intercambio de experiencias académicas e investigativas entre profesionales
-                            y estudiantes de Ingeniería de Sistemas, Ingeniería de Software, Computación e Informática, así como con todos los participantes interesados.
-                        </p>
-                        <p class="text mt-15">
-                            El SICDAS abordará diversos temas dentro de las áreas de conocimiento, incluyendo BIG DATA ANALYTICS, MACHINE LEARNING, DATA MINING, BUSINESS INTELLIGENCE, DATA SCIENCE, OPEN DATA, GOBIERNO DE DATOS y DEEP LEARNING, con enfoque en su aplicación a los desafíos sociales. Se llevarán a cabo las siguientes actividades:
-                        </p>
+  // Rejilla de ponentes: foto e información alternadas, como en la plantilla.
+  var pgrid = document.getElementById('ponentes-grid');
+  pgrid.innerHTML = PONENTES.map(function(p, i){
+    var label = ' tabindex="0" role="button" aria-label="Ver detalles del ponente ' + (i + 1) + ' (' + p.area + ')"';
+    var photo = '<div class="pcell pcell-photo" data-idx="' + i + '"' + label + '><img src="' + p.photo + '" alt="' + p.name + '" loading="lazy" width="240" height="240"></div>';
+    var info = '<div class="pcell pcell-info" data-idx="' + i + '"' + label + '><span class="pname">' + p.name + '</span><span class="prole">' + p.area + '</span></div>';
+    return Math.floor(i / 3) % 2 === 0 ? photo + info : info + photo;
+  }).join('');
 
-                        <ul class="mt-20">
-                            <li>• Conferencias</li>
-                            <li>• Mesa redonda</li>
-                            <li>• Intercambio de ideas y experiencias</li>
-                            <li>• Se otorgarán certificados a los interesados</li>
-                        </ul>
+  var dialog = document.getElementById('ponente-modal');
+  var photoEl = dialog.querySelector('.pm-photo');
+  var nameEl = dialog.querySelector('.pm-name');
+  var roleEl = dialog.querySelector('.pm-role');
+  var linkedinEl = dialog.querySelector('.pm-linkedin');
+  var bioEl = dialog.querySelector('.pm-bio');
 
-                        <p class="date mt-20"><span>29</span> de diciembre 2025</p>
-                    </div> <!-- about content -->
-                </div>
-            </div> <!-- row -->
-        </div> <!-- container -->
-    </section>
+  function openModal(idx){
+    var p = PONENTES[idx];
+    if (!p) return;
+    photoEl.src = p.photo;
+    photoEl.alt = p.name;
+    nameEl.textContent = p.name;
+    var caption = [p.role, p.inst].filter(Boolean).join(' · ');
+    roleEl.textContent = caption;
+    roleEl.style.display = caption ? '' : 'none';
+    if (p.linkedin) {
+      linkedinEl.href = p.linkedin;
+      linkedinEl.style.display = 'inline-flex';
+    } else {
+      linkedinEl.removeAttribute('href');
+      linkedinEl.style.display = 'none';
+    }
+    var paras = (p.topic ? ['Tema: ' + p.topic] : []).concat(p.bio);
+    bioEl.innerHTML = paras.map(function(par){
+      var esc = par.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+      return '<p>' + esc.replace(/\n/g,'<br>') + '</p>';
+    }).join('');
+    dialog.showModal();
+  }
 
-    <!--====== ABOUT PART ENDS ======-->
+  function bindBioTriggers(selector){
+    document.querySelectorAll(selector).forEach(function(cell){
+      cell.addEventListener('click', function(){ openModal(cell.dataset.idx); });
+      cell.addEventListener('keydown', function(e){
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(cell.dataset.idx); }
+      });
+    });
+  }
 
-    <section id="programa" class="programa-area pb-130 pt-80">
+  bindBioTriggers('.pgrid .pcell');
 
-        <div class="container" style="background: #ececec; padding: 20px 20px; border-radius: 8px;">
-                        <div class="row justify-content-center">
-                                <div class="header-content text-center">
-                                    <h3 class="sub-title" style="color: #000000;">Programación Completa</h3>
-                                    <p class="mb-4">Descarga la programación completa del VI Seminario Internacional de Ciencia de Datos Aplicada a la Sociedad (SICDAS).</p>
+  // PROGRAMA TENTATIVO (27/12/2026). kind: event | break | mesa. idx = índice en PONENTES.
+  var LOGO_ITDATA = 'assets/2026/images/logo-itdata.jpeg';
+  var LOGO_FISI = 'assets/2026/images/logo-fisi-unmsm.png';
+  var PROGRAMA = {
+    dom: [
+      { sec:'tarde', time:'12:00', end:'12:15', kind:'event', title:'Inauguración', sub:'Autoridades de la FISI - UNMSM', logo:LOGO_FISI },
+      { sec:'tarde', time:'12:15', end:'12:30', kind:'event', title:'Presentación del VII SICDAS', sub:'Prof. Ulises Román C. · Coordinador ITDATA', logo:LOGO_ITDATA },
+      { sec:'tarde', time:'12:30', end:'13:15', kind:'event', idx:0 },
+      { sec:'tarde', time:'13:15', end:'14:00', kind:'event', idx:1 },
+      { sec:'tarde', time:'14:00', end:'14:45', kind:'event', idx:2 },
+      { sec:'tarde', time:'14:45', end:'15:00', kind:'break', title:'Pausa' },
+      { sec:'tarde', time:'15:00', end:'15:45', kind:'event', idx:3 },
+      { sec:'tarde', time:'15:45', end:'16:30', kind:'event', idx:4 },
+      { sec:'tarde', time:'16:30', end:'17:15', kind:'event', idx:5 },
+      { sec:'tarde', time:'17:15', end:'18:00', kind:'event', idx:6 },
+      { sec:'noche', time:'18:00', end:'18:45', kind:'event', idx:7 },
+      { sec:'noche', time:'18:45', end:'19:00', kind:'break', title:'Pausa' },
+      { sec:'noche', time:'19:00', end:'20:30', kind:'mesa', title:'Mesa redonda: la ciencia de datos frente a los desafíos sociales', sub:'Panelistas por confirmar', logo:LOGO_ITDATA },
+      { sec:'noche', time:'20:30', end:'21:15', kind:'event', idx:8 },
+      { sec:'noche', time:'21:15', end:'21:45', kind:'event', title:'Intercambio de ideas y experiencias', sub:'Ponentes y participantes', logo:LOGO_ITDATA },
+      { sec:'noche', time:'21:45', end:'22:00', kind:'event', title:'Clausura', sub:'Comité organizador · FISI - UNMSM', logo:LOGO_FISI }
+    ]
+  };
+  var SEC_LABELS = { tarde: 'TARDE', noche: 'NOCHE' };
+  var KIND_LABELS = { mesa: 'MESA REDONDA' };
 
-                                    <img src="assets/images/cronograma-sicdas.jpeg" alt="Sobre el SICDAS" class="img-fluid">
-                                    <br><br>
-                                    <a class="main-btn main-btn-2" href="assets/programa/PROGRAMA-VI-SICDAS-DOC.pdf" target="_blank">Ver programación detallada</a>
-                                </div>  <!-- header content -->
-                        </div> <!-- row -->
-                    </div>
+  function rowHTML(r){
+    var p = r.idx != null ? PONENTES[r.idx] : null;
+    var hasTopic = !r.title && p && p.topic;
+    var title = r.title || (hasTopic ? p.topic : '');
+    var byline = hasTopic ? p.name : (!r.title && p ? p.name : null);
+    var sub = r.sub || (p ? [p.role, p.inst].filter(Boolean).join(' · ') : '');
+    var photo = r.photo || (p ? p.photo : null);
+    var highlight = KIND_LABELS[r.kind];
+    var cls = 'prow' + (r.kind === 'break' ? ' is-break' : '') + (highlight ? ' is-taller' : '') + (r.idx != null ? ' linked' : '');
+    var attrs = r.idx != null ? ' data-idx="' + r.idx + '" tabindex="0" role="button" aria-label="Ver detalles: ' + title + '"' : '';
+    var avatar = r.kind === 'break' ? '' : (r.logo
+      ? '<div class="prow-avatar is-logo"><img src="' + r.logo + '" alt="" loading="lazy"></div>'
+      : (photo
+        ? '<div class="prow-avatar"><img src="' + photo + '" alt="" loading="lazy"></div>'
+        : '<div class="prow-avatar"></div>'));
+    var label = highlight ? '<span class="tlabel">' + highlight + '</span>' : '';
+    var cta = r.reg ? '<a class="prow-cta" href="' + r.reg + '" target="_blank" rel="noopener" onclick="event.stopPropagation()">INSCRÍBETE</a>' : '';
+    return '<div class="' + cls + '"' + attrs + '>'
+      + '<div class="prow-time">' + r.time + (r.end ? '<small>– ' + r.end + '</small>' : '') + '</div>'
+      + '<div class="prow-marker"><span class="prow-dot"></span></div>'
+      + '<div class="prow-body">' + avatar + '<div class="prow-text">' + label + (title ? '<span class="prow-title">' + title + '</span>' : '') + (byline ? '<span class="prow-topic">' + byline + '</span>' : '') + (sub ? '<span class="prow-sub">' + sub + '</span>' : '') + '</div>' + cta + '</div>'
+      + '</div>';
+  }
 
-    </section>
-    <!--====== PROGRAMACIÓN / BANNER PART START ======-->
+  function renderDay(rows){
+    var html = '', lastSec = null, open = false;
+    rows.forEach(function(r){
+      if (r.sec !== lastSec) {
+        if (open) html += '</div>';
+        html += '<div class="psec-label">' + (SEC_LABELS[r.sec] || r.sec.toUpperCase()) + '</div><div class="ptimeline">';
+        open = true;
+        lastSec = r.sec;
+      }
+      html += rowHTML(r);
+    });
+    if (open) html += '</div>';
+    return html;
+  }
 
-    <!--====== PROGRAMACIÓN / BANNER PART ENDS ======-->
+  document.querySelectorAll('.pday').forEach(function(el){
+    el.innerHTML = renderDay(PROGRAMA[el.dataset.day]);
+  });
+  bindBioTriggers('.prow[data-idx]');
 
-    <!--====== FEATURES PART START (opcional, se puede adaptar a beneficios del evento) ======-->
+  document.querySelectorAll('.ptab').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.ptab').forEach(function(b){ b.setAttribute('aria-selected', b === btn ? 'true' : 'false'); });
+      document.querySelectorAll('.pday').forEach(function(d){ d.classList.toggle('active', d.dataset.day === btn.dataset.day); });
+    });
+  });
 
-    <section id="features" class="features-area pt-115 pb-130 gray-bg">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="section-title text-center pb-20">
-                        <h2 class="title">¿Por qué participar en el SICDAS?</h2>
-                        <p class="text">
-                            Participar en el SICDAS te permitirá conocer experiencias y aplicaciones reales de Ciencia de Datos para afrontar
-                            desafíos sociales, así como interactuar con investigadores, profesionales y estudiantes del área.
-                        </p>
-                    </div> <!-- section title -->
-                </div>
-            </div> <!-- row -->
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-6 col-sm-8">
-                    <div class="single-features text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
-                        <div class="features-icon">
-                            <i class="lni-microphone"></i>
-                            <span>01</span>
-                        </div>
-                        <div class="features-content">
-                            <h4 class="features-title"><a href="#">Conferencias especializadas</a></h4>
-                            <p class="text">Ponencias sobre Big Data, Machine Learning, Deep Learning y Gobierno de Datos.</p>
-                        </div>
-                    </div> <!-- single features -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-8">
-                    <div class="single-features text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <div class="features-icon">
-                            <i class="lni-users"></i>
-                            <span>02</span>
-                        </div>
-                        <div class="features-content">
-                            <h4 class="features-title"><a href="#">Red de contactos</a></h4>
-                            <p class="text">Intercambio de ideas y experiencias con la comunidad académica y profesional.</p>
-                        </div>
-                    </div> <!-- single features -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-8">
-                    <div class="single-features text-center mt-30 wow FadeIn" data-wow-duration="1s" data-wow-delay="1s">
-                        <div class="features-icon">
-                            <i class="lni-certificate"></i>
-                            <span>03</span>
-                        </div>
-                        <div class="features-content">
-                            <h4 class="features-title"><a href="#">Certificación</a></h4>
-                            <p class="text">Certificado de participación para los asistentes que completen el registro correspondiente.</p>
-                        </div>
-                    </div> <!-- single features -->
-                </div>
-            </div> <!-- row -->
-        </div> <!-- container -->
-    </section>
-
-    <!--====== FEATURES PART ENDS ======-->
-
-    <!--====== SPONSORS / ORGANIZAN PART START (usa logos de ITDATA y FISI) ======-->
-
-    <div id="client" class="client-area pt-115 pb-130">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="section-title text-center pb-50">
-                        <h2 class="title">Organizan</h2>
-                        <p class="text">
-                            Grupo de Investigación ITDATA y la Facultad de Ingeniería de Sistemas e Informática (FISI) de la Universidad Nacional Mayor de San Marcos.
-                        </p>
-                    </div> <!-- section title -->
-                </div>
-            </div> <!-- row -->
-            <div class="row justify-content-center">
-                <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                    <div class="single-client text-center">
-                        <a href="https://itdataperu.net/" target="_blank">
-                            <img src="assets/images/logo-itdata.jpeg" alt="ITDATA" class="img-fluid">
-                        </a>
-                    </div> <!-- single client -->
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                    <div class="single-client text-center">
-                        <a href="https://sistemas.unmsm.edu.pe/" target="_blank">
-                            <img src="assets/images/logo-fisi-unmsm.png" alt="FISI UNMSM" class="img-fluid">
-                        </a>
-                    </div> <!-- single client -->
-                </div>
-            </div> <!-- row -->
-        </div> <!-- container -->
-    </div>
-
-    <!--====== SPONSORS / ORGANIZAN PART ENDS ======-->
-
-    <!--====== CONTACT PART START ======-->
-
-    <section id="contact" class="contact-area pt-80 pb-130">
-        <div class="container">
-            <div class="row">
-                <!-- Info de contacto -->
-                <div class="col-lg-8">
-                    <div class="contact-info pt-40">
-                        <div class="section-title pb-10">
-                            <h2 class="title">Contacto</h2>
-                        </div> <!-- section title -->
-                        <ul>
-                            <li>
-                                <div class="single-info d-flex mt-25">
-                                    <div class="info-icon">
-                                        <i class="lni-home"></i>
-                                    </div>
-                                    <div class="info-content media-body">
-                                        <h6 class="info-title">Dirección</h6>
-                                        <p class="text">Calle Germán Amézaga s/n - Lima</p>
-                                    </div>
-                                </div> <!-- single info -->
-                            </li>
-                            <li>
-                                <div class="single-info d-flex mt-25">
-                                    <div class="info-icon">
-                                        <i class="lni-user"></i>
-                                    </div>
-                                    <div class="info-content media-body">
-                                        <h6 class="info-title">Coordinador IT-Data</h6>
-                                        <p class="text">Prof. Ulises Román C.</p>
-                                    </div>
-                                </div> <!-- single info -->
-                            </li>
-                            <li>
-                                <div class="single-info d-flex mt-25">
-                                    <div class="info-icon">
-                                        <i class="lni-phone-handset"></i>
-                                    </div>
-                                    <div class="info-content media-body">
-                                        <h6 class="info-title">Teléfono</h6>
-                                        <p class="text">+51 938 345 776</p>
-                                    </div>
-                                </div> <!-- single info -->
-                            </li>
-                            <li>
-                                <div class="single-info d-flex mt-25">
-                                    <div class="info-icon">
-                                        <i class="lni-envelope"></i>
-                                    </div>
-                                    <div class="info-content media-body">
-                                        <h6 class="info-title">Correo electrónico</h6>
-                                        <p class="text">nromanc@unmsm.edu.pe</p>
-                                    </div>
-                                </div> <!-- single info -->
-                            </li>
-                        </ul>
-                    </div> <!-- contact info -->
-                </div>
-
-
-            </div> <!-- row -->
-
-            <!-- Mapa -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="contact-map pt-130">
-                        <div class="gmap_canvas">
-                            <iframe id="gmap_canvas"
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.856800965115!2d-77.08811692408136!3d-12.053372142025584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c907e38a2fe7%3A0xdd7e438a1429ed0f!2sFacultad%20de%20Ingenier%C3%ADa%20de%20Sistemas%20e%20Inform%C3%A1tica%20-%20UNMSM!5e0!3m2!1ses-419!2spe!4v1702383840960!5m2!1ses-419!2spe"
-                                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-                        </div>
-                    </div> <!-- contact map -->
-                </div>
-            </div> <!-- row -->
-        </div> <!-- container -->
-    </section>
-
-    <!--====== CONTACT PART ENDS ======-->
-
-    <!--====== FOOTER PART START ======-->
-
-    <section id="footer" class="footer-area bg_cover" style="background-image: url(assets/images/footer.jpg)">
-      
-        
-        <div class="footer-widget">
-            <div class="container">
-                <div class="widget  pt-80 pb-130">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="footer-address mt-40">
-                                <h5 class="f-title">Sede</h5>
-                                <p class="text">
-                                    Facultad de Ingeniería de Sistemas e Informática (FISI) - UNMSM<br>
-                                    Calle Germán Amézaga s/n, Lima - Perú
-                                </p>
-                                <a class="contact-link" href="https://sistemas.unmsm.edu.pe/" target="_blank">Ir al sitio de la FISI</a>
-                            </div> <!-- footer address -->
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="footer-contact mt-40">
-                                <h5 class="f-title">Redes sociales</h5>
-                                <p class="text">Sigue al SICDAS en redes para enterarte de futuras ediciones y actividades.</p>
-<ul class="social">
-    <li>
-        <a href="https://www.facebook.com/SICDAS" target="_blank">
-            <i class="lni-facebook-filled"></i>
-        </a>
-    </li>
-    <li>
-        <a href="https://github.com/sicdas" target="_blank">
-            <i class="lni-github-original"></i>
-        </a>
-    </li>
-    <li>
-        <a href="https://www.linkedin.com/company/sicdas/" target="_blank">
-            <i class="lni-linkedin-original"></i>
-        </a>
-    </li>
-</ul>
-
-                            </div>
-                        </div>
-                    </div> <!-- row -->
-                </div> <!-- widget -->
-            </div> <!-- container -->
-        </div> <!-- footer widget -->
-        
-        <div class="footer-copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="copyright text-center">
-                            <p class="text">Sitio del SICDAS · Diseñado usando la plantilla Eventify adaptada para el VI Seminario Internacional de Ciencia de Datos Aplicada a la Sociedad.</p>
-                        </div> <!-- copyright -->
-                    </div>
-                </div> <!-- row -->
-            </div> <!-- container -->
-        </div> <!-- container -->
-    </section>
-
-    <!--====== FOOTER PART ENDS ======-->
-    
-    <!--====== BACK TOP TOP PART START ======-->
-
-    <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
-
-    <!--====== BACK TOP TOP PART ENDS ======--> 
-
-    <!--====== SCRIPTS ======-->
-
-    <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
-    <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
-
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-
-    <script src="assets/js/waypoints.min.js"></script>
-    <script src="assets/js/jquery.counterup.min.js"></script>
-
-    <script src="assets/js/slick.min.js"></script>
-
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-
-    <script src="assets/js/jquery.easing.min.js"></script>
-    <script src="assets/js/scrolling-nav.js"></script>
-
-    <script src="assets/js/jquery.countdown.min.js"></script>
-
-    <script src="assets/js/wow.min.js"></script>
-
-    <script src="assets/js/main.js"></script>
-
+  dialog.querySelector('.pm-close').addEventListener('click', function(){ dialog.close(); });
+  dialog.addEventListener('click', function(e){ if (e.target === dialog) dialog.close(); });
+})();
+</script>
 </body>
-
 </html>

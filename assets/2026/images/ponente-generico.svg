@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Ponente por confirmar">
+  <rect width="400" height="400" fill="#C9D1DA"/>
+  <circle cx="200" cy="150" r="70" fill="#8FA4C7"/>
+  <path d="M60 400c0-80 63-140 140-140s140 60 140 140z" fill="#8FA4C7"/>
+  <text x="200" y="385" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="2" fill="#0C1633">POR CONFIRMAR</text>
+</svg>
