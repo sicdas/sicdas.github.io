@@ -163,6 +163,27 @@ dialog.pmodal .pm-bio{font-family:var(--font-sans);font-size:1rem}
 @media (max-width:767px){.editions-gallery{margin-top:-60px}}
 @media (max-width:640px){.t-nav{font-size:.78rem;gap:8px 16px !important}.t-prompt{font-size:.72rem}.bar{display:none}.t-label{letter-spacing:.08em}}
 
+/* Menú hamburguesa en celulares. En escritorio, .nav-links no crea caja
+   (display:contents) y el menú se ve igual que antes. Las reglas móviles solo
+   se aplican con .nav-js (lo pone scripts.html): sin JavaScript, los enlaces
+   siguen visibles. */
+.nav-links{display:contents}
+.nav-toggle{display:none}
+@media (max-width:767px){
+.t-nav.nav-js{justify-content:flex-end !important;z-index:20 !important}
+.t-nav.nav-js .nav-toggle{display:flex;flex-direction:column;justify-content:center;gap:6px;width:44px;height:44px;padding:0 9px;background:transparent;border:2px solid rgba(255,255,255,.35);cursor:pointer}
+.nav-toggle span{display:block;height:2px;background:#FFFFFF;transition:transform .25s,opacity .25s}
+.nav-toggle:focus-visible{outline:2px solid var(--acento);outline-offset:2px}
+.nav-toggle[aria-expanded="true"]{border-color:var(--acento)}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+.t-nav.nav-js .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:#0C1633;border-top:3px solid var(--acento);box-shadow:0 12px 24px rgba(0,0,0,.4)}
+.t-nav.nav-js.nav-abierto .nav-links{display:flex}
+.t-nav.nav-js .nav-links a{display:block;padding:14px 24px;font-size:1rem;border-bottom:1px solid #1E2C55}
+.t-nav.nav-js .nav-links a:last-child{border-bottom:none}
+}
+
 /* Lista numerada estilo semcomp-unmsm.org ("Organiza SEMCOMP.") */
 .info-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:32px;width:100%;margin:0;padding:0;list-style:none}
 @media (max-width:640px){.info-list{grid-template-columns:1fr}}

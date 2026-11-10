@@ -12,6 +12,11 @@
 <span class="bar" aria-hidden="true" style="left:96%;top:300px;width:10px;height:120px;background:var(--acento);animation-duration:7s;animation-delay:-6s"></span>
 
 <nav aria-label="Principal" class="t-nav" style="position:relative;z-index:5;min-height:70px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 26px;padding:16px 16px">
+<!-- Botón de menú (tres líneas): solo se ve en celulares; lo activa scripts.html -->
+<button type="button" class="nav-toggle" aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menú">
+<span></span><span></span><span></span>
+</button>
+<div id="menu-principal" class="nav-links">
 {%- for item in site.data.navegacion %}
 <a href="{{ item.url }}" style="color:#FFFFFF;text-decoration:none">{{ item.titulo }}</a>
 {%- endfor %}
@@ -20,6 +25,7 @@
 {%- else %}
 <a href="#contacto" class="t-nav-cta" style="color:var(--acento);text-decoration:none">Inscripciones</a>
 {%- endif %}
+</div>
 </nav>
 
 <div style="position:relative;z-index:5;flex-grow:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:36px;padding:32px 16px 150px;text-align:center">

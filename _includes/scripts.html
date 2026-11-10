@@ -2,6 +2,29 @@
 {%- capture nota_durante %}¡El {{ ev.edicion }} {{ ev.sigla }} está en curso! Hoy, de {{ ev.hora_inicio }} a {{ ev.hora_fin }}.{% endcapture -%}
 <script>
 (function(){
+  // Menú hamburguesa (celulares). Se ejecuta primero para que un error en
+  // otro bloque no deje el menú sin funcionar.
+  var nav = document.querySelector('.t-nav');
+  var btn = nav && nav.querySelector('.nav-toggle');
+  if (!btn) return;
+  nav.classList.add('nav-js');
+  function setOpen(open){
+    nav.classList.toggle('nav-abierto', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  }
+  btn.addEventListener('click', function(){
+    setOpen(btn.getAttribute('aria-expanded') !== 'true');
+  });
+  nav.querySelectorAll('.nav-links a').forEach(function(a){
+    a.addEventListener('click', function(){ setOpen(false); });
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && nav.classList.contains('nav-abierto')) { setOpen(false); btn.focus(); }
+  });
+})();
+
+(function(){
   // Cuenta regresiva (fechas en _data/evento.yml)
   var start = new Date({{ ev.inicio_iso | jsonify }}).getTime();
   var end = new Date({{ ev.fin_iso | jsonify }}).getTime();
