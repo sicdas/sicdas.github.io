@@ -20,7 +20,7 @@ plataformas: Google Meet y YouTube
 sede: la FISI - UNMSM, Lima
 
 # Enlaces. Déjelos vacíos ("") hasta tenerlos; la página se adapta sola.
-inscripcion_url: ""        # formulario de inscripción (Google Forms)
+inscripcion_url: "https://forms.gle/Q9mCtFJM7zn94uqY7"        # formulario de inscripción (Google Forms)
 certificado_url: ""        # formulario de registro para certificado
 meet_url: ""               # enlace de Google Meet / Zoom
 youtube_url: ""            # transmisión en YouTube
